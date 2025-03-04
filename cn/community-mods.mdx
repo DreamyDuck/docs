@@ -1,0 +1,202 @@
+---
+title: 'Community Mods'
+description: 'Explore and use community-created mods for Scarlet DMA devices'
+---
+
+# Community Mods
+
+The Scarlet community has created a wide range of mods that extend the functionality of Scarlet devices. This page highlights some of the most popular community mods and explains how to install and use them.
+
+## What are Community Mods?
+
+Community mods are custom scripts, profiles, and applications created by Scarlet users to enhance the functionality of Scarlet devices. These mods can add new features, improve existing ones, or provide specialized functionality for specific games.
+
+<Warning>
+  Community mods are created by users, not by Scarlet Technology. Use them at your own risk and always download from trusted sources.
+</Warning>
+
+## Popular Community Mods
+
+<CardGroup cols={2}>
+  <Card title="Enhanced ESP" icon="eye">
+    **Creator**: ScarletMaster
+    
+    **Description**: Advanced ESP features including skeleton tracking, item filtering, and customizable colors.
+    
+    **Compatibility**: Works with most FPS games
+    
+    [Download](https://discord.gg/scarlet)
+  </Card>
+  
+  <Card title="Auto Farming" icon="wheat-awn">
+    **Creator**: GameOptimizer
+    
+    **Description**: Automates resource gathering in survival and MMO games.
+    
+    **Compatibility**: Works with Minecraft, Rust, and similar games
+    
+    [Download](https://discord.gg/scarlet)
+  </Card>
+  
+  <Card title="Recoil Patterns" icon="bullseye">
+    **Creator**: AimPro
+    
+    **Description**: Advanced recoil control with game-specific patterns.
+    
+    **Compatibility**: CS2, Valorant, Apex Legends
+    
+    [Download](https://discord.gg/scarlet)
+  </Card>
+  
+  <Card title="Radar Plus" icon="radar">
+    **Creator**: RadarTech
+    
+    **Description**: Enhanced radar with customizable range and filters.
+    
+    **Compatibility**: Most multiplayer games
+    
+    [Download](https://discord.gg/scarlet)
+  </Card>
+</CardGroup>
+
+## Installing Community Mods
+
+<Steps>
+  <Step title="Download the mod">
+    Download the mod files from a trusted source, such as our [Discord community](https://discord.gg/scarlet).
+  </Step>
+  <Step title="Extract files">
+    If the mod comes as a compressed file (ZIP, RAR), extract it to a location on your computer.
+  </Step>
+  <Step title="Open the Scarlet application">
+    Launch the Scarlet application and ensure your device is connected.
+  </Step>
+  <Step title="Import the mod">
+    Go to Settings > Mods > Import Mod and select the mod files you downloaded.
+  </Step>
+  <Step title="Configure the mod">
+    Follow any specific configuration instructions provided by the mod creator.
+  </Step>
+  <Step title="Activate the mod">
+    Enable the mod in the Mods section of the Scarlet application.
+  </Step>
+</Steps>
+
+## Creating Your Own Mods
+
+Interested in creating your own mods for Scarlet? Here's how to get started:
+
+<AccordionGroup>
+  <Accordion title="Setting up the development environment">
+    1. Install the [Scarlet SDK](/development)
+    2. Set up your preferred code editor (VS Code recommended)
+    3. Install the Scarlet Mod Development Kit from our [developer portal](https://developers.scarlet.technology)
+  </Accordion>
+  
+  <Accordion title="Basic mod structure">
+    A basic Scarlet mod consists of:
+    
+    ```
+    my-mod/
+    ├── manifest.json    # Mod metadata
+    ├── main.lua         # Main mod code
+    ├── ui/              # UI elements (optional)
+    │   └── settings.js  # Settings UI
+    └── README.md        # Documentation
+    ```
+    
+    The manifest.json file should include:
+    
+    ```json
+    {
+      "name": "My Custom Mod",
+      "version": "1.0.0",
+      "author": "Your Name",
+      "description": "Description of your mod",
+      "compatibleGames": ["Game1", "Game2"],
+      "requiredPermissions": ["memory", "overlay"]
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="Example mod code">
+    Here's a simple example of a mod that highlights players:
+    
+    ```lua
+    -- main.lua
+    function OnInitialize()
+      print("Mod initialized!")
+    end
+    
+    function OnPlayerDetected(player)
+      if player.team ~= localPlayer.team then
+        -- Draw a box around enemy players
+        DrawBox(player.position, Color.RED)
+      end
+    end
+    
+    function OnSettings()
+      -- Return settings schema
+      return {
+        {
+          name = "highlightColor",
+          type = "color",
+          default = Color.RED,
+          label = "Highlight Color"
+        },
+        {
+          name = "highlightDistance",
+          type = "slider",
+          min = 0,
+          max = 1000,
+          default = 500,
+          label = "Maximum Highlight Distance"
+        }
+      }
+    end
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Sharing Your Mods
+
+Once you've created a mod, you can share it with the Scarlet community:
+
+1. Test your mod thoroughly
+2. Create clear documentation
+3. Package your mod (zip all required files)
+4. Share it in the #community-mods channel on our [Discord server](https://discord.gg/scarlet)
+
+## Mod Safety Guidelines
+
+When using community mods, follow these safety guidelines:
+
+- Only download mods from trusted sources
+- Check mod reviews and feedback before installing
+- Be cautious of mods that request unusual permissions
+- Keep your Scarlet software and firmware updated
+- Report suspicious mods to our moderation team
+
+## Featured Mod Creators
+
+<CardGroup cols={3}>
+  <Card title="ScarletMaster" icon="crown">
+    Creator of numerous popular ESP and aimbot mods
+    
+    [View Profile](https://discord.gg/scarlet)
+  </Card>
+  
+  <Card title="GameOptimizer" icon="trophy">
+    Specializes in automation and farming mods
+    
+    [View Profile](https://discord.gg/scarlet)
+  </Card>
+  
+  <Card title="RadarTech" icon="medal">
+    Expert in radar and detection mods
+    
+    [View Profile](https://discord.gg/scarlet)
+  </Card>
+</CardGroup>
+
+Join our [Discord community](https://discord.gg/scarlet) to discover more mods and connect with mod creators! 
