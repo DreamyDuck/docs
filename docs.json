@@ -58,37 +58,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Development",
-                "pages": [
-                  "en/development"
-                ]
-              },
-              {
-                "group": "Features",
-                "pages": [
-                  "en/supported-games",
-                  "en/game-profiles",
-                  "en/community-mods"
-                ]
-              },
-              {
-                "group": "Support",
-                "pages": [
-                  "en/troubleshooting"
-                ]
-              },
-              {
-                "group": "Essentials",
-                "pages": [
-                  "en/essentials/markdown",
-                  "en/essentials/code",
-                  "en/essentials/images",
-                  "en/essentials/settings",
-                  "en/essentials/navigation",
-                  "en/essentials/reusable-snippets"
-                ]
               }
             ]
           },
