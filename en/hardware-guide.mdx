@@ -1,0 +1,113 @@
+---
+title: "Hardware Guide"
+description: "Comprehensive guide for Scarlet hardware setup and configuration"
+icon: 'microchip'
+---
+
+# Hardware Setup Guide
+
+## DMA Board Setup
+
+<Tabs>
+  <Tab title="Basic Setup">
+    ### Initial Setup
+    1. Install the DMA board in an available PCIe slot
+    2. Connect the data cable between primary and secondary computers
+    3. Verify power connections if using external PSU
+    4. Install required drivers and software
+    
+    <Tip>
+    For detailed setup instructions, see our [Setup Guide](/hardware-guide/setup-instruction)
+    </Tip>
+  </Tab>
+  
+  <Tab title="Speed Testing">
+    ### Performance Testing
+    - Run the DMA speed test utility
+    - Verify connection stability
+    - Check for optimal PCIe lane configuration
+    
+    <Note>
+    Recommended minimum speed: 100MB/s for optimal performance
+    </Note>
+  </Tab>
+</Tabs>
+
+## Fuser Configuration
+
+### Supported Models
+
+<CardGroup>
+  <Card title="Dichen V4/V5/V6" icon="microchip">
+    Supports 2K@144Hz output
+    [Setup Guide](/hardware-guide/fuser/dichen-v4-v5-v6)
+  </Card>
+  
+  <Card title="Dichen Mini" icon="microchip">
+    Compact 2K@144Hz solution
+    [Setup Guide](/hardware-guide/fuser/dichen-mini)
+  </Card>
+  
+  <Card title="Dichen P1" icon="crown">
+    Premium 4K@165Hz support
+    [Setup Guide](/hardware-guide/fuser/dichen-p1)
+  </Card>
+</CardGroup>
+
+## Kmbox Configuration
+
+### Available Models
+
+<CardGroup>
+  <Card title="Kmbox B+" icon="box">
+    Standard configuration
+    [Setup Guide](/hardware-guide/kmbox/b-plus)
+  </Card>
+  
+  <Card title="Kmbox Net" icon="network-wired">
+    Network-enabled version
+    [Setup Guide](/hardware-guide/kmbox/net)
+  </Card>
+</CardGroup>
+
+## Firmware Management
+
+<Accordion title="Firmware Update Process">
+### Update Steps
+1. Obtain your DMA ID
+2. Download the latest firmware
+3. Follow burning instructions for your device type
+4. Verify successful update
+
+<Warning>
+Always backup your current firmware before updating
+</Warning>
+</Accordion>
+
+## ESP Configuration
+
+### Remote Access Options
+
+<CardGroup>
+  <Card title="Moonlight" icon="moon">
+    Low-latency game streaming
+    [Setup Guide](/hardware-guide/esp/moonlight)
+  </Card>
+  
+  <Card title="Parsec" icon="globe">
+    Cloud gaming solution
+    [Setup Guide](/hardware-guide/esp/parsec)
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<Accordion title="Common Issues">
+### Frequent Problems
+- Connection issues
+- Speed test failures
+- Firmware update errors
+- Device recognition problems
+
+See our [Troubleshooting Guide](/troubleshooting) for detailed solutions
+</Accordion> 
