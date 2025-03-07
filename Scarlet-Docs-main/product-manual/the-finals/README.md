@@ -1,6 +1,0 @@
----
-icon: play
----
-
-# \[ THE FINALS ]
-

@@ -1,6 +1,0 @@
----
-icon: play
----
-
-# Fuser
-

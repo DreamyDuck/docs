@@ -1,6 +1,0 @@
----
-icon: play
----
-
-# \[ ARENA BREAKOUT ]
-
