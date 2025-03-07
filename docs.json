@@ -26,12 +26,12 @@
               {
                 "group": "Game Guides",
                 "pages": [
-                  "en/product-manuals/apex-legends/index",
-                  "en/product-manuals/counter-strike-2/index",
-                  "en/product-manuals/valorant/index",
-                  "en/product-manuals/dead-by-daylight/index",
-                  "en/product-manuals/the-finals/index",
-                  "en/product-manuals/arena-breakout/index"
+                  "en/product-manuals/apex-legends/apex-legends",
+                  "en/product-manuals/counter-strike-2/cs2",
+                  "en/product-manuals/valorant/valorant",
+                  "en/product-manuals/dead-by-daylight/dbd",
+                  "en/product-manuals/the-finals/finals",
+                  "en/product-manuals/arena-breakout/arena-breakout"
                 ]
               },
               {
@@ -40,21 +40,21 @@
                   {
                     "group": "Fuser Solutions",
                     "pages": [
-                      "en/hardware-guide/fuser/dichen-p1/index",
-                      "en/hardware-guide/fuser/dichen-mini/index"
+                      "en/hardware-guide/fuser/dichen-p1/dichen-p1",
+                      "en/hardware-guide/fuser/dichen-mini/dichen-mini"
                     ]
                   },
                   {
                     "group": "Input Devices",
                     "pages": [
-                      "en/hardware-guide/kmbox/b-plus/index",
-                      "en/hardware-guide/kmbox/net/index"
+                      "en/hardware-guide/kmbox/b-plus/kmbox-b-plus",
+                      "en/hardware-guide/kmbox/net/kmbox-net"
                     ]
                   },
                   {
                     "group": "Remote Access",
                     "pages": [
-                      "en/hardware-guide/esp/index"
+                      "en/hardware-guide/esp/esp-guide"
                     ]
                   }
                 ]
