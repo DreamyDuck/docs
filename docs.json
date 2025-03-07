@@ -18,65 +18,119 @@
             "groups": [
               {
                 "group": "Get Started",
+                "pages": ["en/introduction"]
+              },
+              {
+                "group": "Loader Guides",
                 "pages": [
-                  "en/introduction",
-                  "en/quickstart"
+                  "en/product-manuals/loader/loader",
+                  "en/product-manuals/loader/change-language",
+                  "en/product-manuals/loader/troubleshoot",
+                  "en/product-manuals/loader/reset-hwid"
                 ]
               },
               {
                 "group": "Game Guides",
                 "pages": [
-                  "en/product-manuals/apex-legends/apex-legends",
-                  "en/product-manuals/counter-strike-2/cs2",
-                  "en/product-manuals/valorant/valorant",
-                  "en/product-manuals/dead-by-daylight/dbd",
-                  "en/product-manuals/the-finals/finals",
-                  "en/product-manuals/arena-breakout/arena-breakout"
+                  {
+                    "group": "Apex Legends Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/apex-legends/apex-legends"]
+                  },
+                  {
+                    "group": "Arena Breakout Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/arena-breakout/arena-breakout"]
+                  },
+                  {
+                    "group": "Counter-Strike 2 Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/counter-strike-2/cs2"]
+                  },
+                  {
+                    "group": "Dead by Daylight Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/dead-by-daylight/dbd"]
+                  },
+                  {
+                    "group": "PYBG Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/pubg/pubg"]
+                  },
+                  {
+                    "group": "The Finals Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/the-finals/finals"]
+                  },
+                  {
+                    "group": "Valorant Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/valorant/valorant"]
+                  }
                 ]
               },
               {
                 "group": "Hardware Guides",
                 "pages": [
                   {
-                    "group": "Fuser Solutions",
+                    "group": "DMA Board",
+                    "icon": "microchip",
+                    "pages": [
+                      "en/hardware-guide/dma/setup",
+                      "en/hardware-guide/dma/speed-test",
+                      "en/hardware-guide/dma/troubleshoot"
+                    ]
+                  },
+                  {
+                    "group": "Fuser",
+                    "icon": "microchip",
                     "pages": [
                       "en/hardware-guide/fuser/dichen-p1/dichen-p1",
                       "en/hardware-guide/fuser/dichen-mini/dichen-mini"
                     ]
                   },
                   {
-                    "group": "Input Devices",
+                    "group": "Kmbox",
+                    "icon": "microchip",
                     "pages": [
-                      "en/hardware-guide/kmbox/b-plus/kmbox-b-plus",
-                      "en/hardware-guide/kmbox/net/kmbox-net"
+                      {
+                        "group": "B +",
+                        "icon": "angle-right",
+                        "pages": [
+                          "en/hardware-guide/kmbox/b-plus/setup",
+                          "en/hardware-guide/kmbox/b-plus/change-com",
+                          "en/hardware-guide/kmbox/b-plus/kmbox-curve",
+                          "en/hardware-guide/kmbox/b-plus/upgrade-firmware",
+                          "en/hardware-guide/kmbox/b-plus/troubleshoot"
+                        ]
+                      },
+                      {
+                        "group": "Net",
+                        "icon": "angle-right",
+                        "pages": [
+                          "en/hardware-guide/kmbox/net/setup",
+                          "en/hardware-guide/kmbox/net/kmbox-curve",
+                          "en/hardware-guide/kmbox/net/upgrade-firmware",
+                          "en/hardware-guide/kmbox/net/troubleshoot"
+                        ]
+                      }
                     ]
                   },
                   {
-                    "group": "Remote Access",
+                    "group": "Firmware",
+                    "icon": "file",
                     "pages": [
-                      "en/hardware-guide/esp/esp-guide"
+                      "en/hardware-guide/firmware/get-dna-id"
+                    ]
+                  },
+                  {
+                    "group": "ESP w/o Fuser", 
+                    "icon": "eye",
+                    "pages": [
+                      "en/hardware-guide/esp/moonlight",
+                      "en/hardware-guide/esp/parsec"
                     ]
                   }
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "API Reference",
-            "groups": [
-              {
-                "group": "API Documentation",
-                "pages": [
-                  "en/api-reference/introduction"
-                ]
-              },
-              {
-                "group": "Endpoint Examples",
-                "pages": [
-                  "en/api-reference/endpoint/get",
-                  "en/api-reference/endpoint/create",
-                  "en/api-reference/endpoint/delete",
-                  "en/api-reference/endpoint/webhook"
                 ]
               }
             ]
@@ -91,16 +145,11 @@
             "groups": [
               {
                 "group": "开始使用",
-                "pages": [
-                  "cn/introduction",
-                  "cn/quickstart"
-                ]
+                "pages": ["cn/introduction", "cn/quickstart"]
               },
               {
                 "group": "开发",
-                "pages": [
-                  "cn/development"
-                ]
+                "pages": ["cn/development"]
               },
               {
                 "group": "功能",
@@ -112,9 +161,7 @@
               },
               {
                 "group": "支持",
-                "pages": [
-                  "cn/troubleshooting"
-                ]
+                "pages": ["cn/troubleshooting"]
               },
               {
                 "group": "基础",
@@ -134,9 +181,7 @@
             "groups": [
               {
                 "group": "API 文档",
-                "pages": [
-                  "cn/api-reference/introduction"
-                ]
+                "pages": ["cn/api-reference/introduction"]
               },
               {
                 "group": "端点示例",
