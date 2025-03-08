@@ -18,15 +18,15 @@
             "groups": [
               {
                 "group": "Get Started",
-                "pages": ["en/introduction"]
+                "pages": ["en/introduction", "en/dma-intro", "en/fuser-intro", "en/kmbox-intro"]
               },
               {
                 "group": "Loader Guides",
                 "pages": [
                   "en/product-manuals/loader/loader",
                   "en/product-manuals/loader/change-language",
-                  "en/product-manuals/loader/troubleshoot",
-                  "en/product-manuals/loader/reset-hwid"
+                  "en/product-manuals/loader/reset-hwid",
+                  "en/product-manuals/loader/troubleshoot"
                 ]
               },
               {
@@ -109,8 +109,8 @@
                         "icon": "angle-right",
                         "pages": [
                           "en/hardware-guide/kmbox/net/setup",
-                          "en/hardware-guide/kmbox/net/kmbox-curve",
                           "en/hardware-guide/kmbox/net/upgrade-firmware",
+                          "en/hardware-guide/kmbox/net/kmbox-curve",
                           "en/hardware-guide/kmbox/net/troubleshoot"
                         ]
                       }
@@ -120,7 +120,15 @@
                     "group": "Firmware",
                     "icon": "file",
                     "pages": [
-                      "en/hardware-guide/firmware/get-dna-id"
+                      "en/hardware-guide/firmware/get-dna-id",
+                      {
+                        "group": "Firmware Burning Manual",
+                        "icon": "angle-right",
+                        "pages": [
+                          "en/hardware-guide/firmware/burning-manual/ch347",
+                          "en/hardware-guide/firmware/burning-manual/rs232"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -200,19 +208,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://scarlet.technology/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://discord.gg/scarlet",
-          "icon": "discord"
-        },
-        {
           "anchor": "Website",
           "href": "https://scarlet.technology",
           "icon": "globe"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.scarlet.technology/",
+          "icon": "discord"
+        },        
+        {
+          "anchor": "View Purchased Key",
+          "href": "https://scarlet.technology/my-account/view-license-keys/",
+          "icon": "key"
         }
       ]
     }
@@ -224,21 +232,25 @@
   "navbar": {
     "links": [
       {
+        "label": "Store",
+        "href": "https://scarlet.technology/shop"
+      },
+      {
         "label": "Support",
-        "href": "mailto:support@scarlet.technology"
+        "href": "https://discord.scarlet.technology/"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.scarlet.technology"
+      "label": "Visit Site",
+      "href": "https://scarlet.technology"
     }
   },
   "footer": {
     "socials": {
-      "discord": "https://discord.gg/scarlet",
-      "github": "https://github.com/scarlet-technology",
-      "twitter": "https://twitter.com/scarlettech"
+      "discord": "https://discord.scarlet.technology/",
+      "github": "https://github.com/",
+      "twitter": "https://twitter.com/"
     }
   }
 }

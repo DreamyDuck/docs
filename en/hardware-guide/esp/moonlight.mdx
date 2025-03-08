@@ -3,3 +3,56 @@ title: "Moonlight"
 description: "Instruction to ESP Wallhack without Fuser by using Moonlight"
 icon: 'moon'
 ---
+<CardGroup cols={2}>
+  <Card title="Sunshine [Main PC]" icon="microsoft">
+    Download & Install on **Main PC**
+  </Card>
+  <Card title="Moonlight [Second PC]" icon="microsoft">
+    Download & Install on **Second PC**
+  </Card>
+</CardGroup>
+---
+
+# Moonlight Setup
+1. On **Second PC**, open `Moonlight` -> Settings Page:
+    - Set to **Borderless Windows Mode**
+    - Enable **Vertical Sync**
+2. Back to Main Page, click the desktop icon in the list.
+3. Remember the 4 digits PIN number.
+4. Run Browser -> Open `https://localhost:47990/` page. **(Must use Edge Browser)**
+5. It will pop up `NET::ERR_CERT_AUTHORITY_INVALID` Error, click Advanced -> Continue.
+6. You will now loaded into Sunshine Setup page.
+<Tip>
+    It's recommended to set all the information to 1, easy remember.
+</Tip>
+<Frame>
+      <img src="/en/images/moonlight0.png" />
+    </Frame>
+
+7. Configure the settings as Image below:
+<Frame>
+      <img src="/en/images/moonlight1.png" />
+    </Frame>
+8. After click Save, goto PIN page and fill the 4 digits PIN number you get on Step 3. Click Send.
+<Frame>
+      <img src="/en/images/moonlight2.png" />
+    </Frame>
+9. The Second PC moonlight's desktop icon doesn't show locked means it's done.
+<Tabs>
+  <Tab title="Unlocked (Done)">
+    <Frame>
+      <img src="/en/images/moonlight3.png" />
+    </Frame>
+  </Tab>
+  <Tab title="Locked (Incomplete)">
+    <Frame>
+      <img src="/en/images/moonlight4.png" />
+    </Frame>
+  </Tab>
+</Tabs>
+10. Click the Desktop Icon to start the broadcast.
+---
+# How to exit broadcast Moonlight
+<Check>
+    On **Second PC** keyboard press `Ctrl` + `Shift` + `Alt` + `Q` together to exit the broadcast moonlight. 
+</Check>

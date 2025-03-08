@@ -3,3 +3,80 @@ title: "Troubleshooting"
 description: "Solutions for Error & Bugs"
 icon: 'angle-right'
 ---
+<Warning>
+    This document is intended solely for troubleshooting issues that arise during the initial installation of DMA or when setting up a new PC for the first time. It does not cover problems encountered during regular use. If you experience any issues, please communicate with the seller. We will do our best to assist you.
+</Warning>
+# ① The board doesn't light up after being plugged in
+> Steps to resolve (follow in sequential order, proceed to the next step only if the previous one fails; skip subsequent steps once the issue is resolved):
+
+1. Check if the protective film on the DMA's golden fingers has been removed.  
+2. After shutting down the Main PC and cutting off power, reinstall the DMA or switch it to a different PCIE slot.
+---
+# ② Blue Screen, Get Stuck at Startup Screen, Mouse Freeze, PC Freeze after installed DMA boards
+> Steps to resolve (follow in sequential order, proceed to the next step only if the previous one fails; skip subsequent steps once the issue is resolved):
+
+1. Update the motherboard BIOS. Visit the support center on your motherboard's official website, locate your motherboard model, and find detailed instructions for updating BIOS along with the latest BIOS file.  
+2. Switch to another available PCIe slot for installation.  
+3. Reinstall windows (you can skip this step if your system has important files).  
+4. Install the DMA into the graphics card slot, then place the graphics card into a different slot. (This step usually succeeds, but it might affect the performance of high-end graphics cards.)  
+5. Flash another firmware. (That's mostly what causes it. Firmware Incompatible)
+---
+# ③ Error when SpeedTest on Second PC as image below or Main PC crashes once SpeedTest on Second PC
+> This issue is usually related to the settings of the Main PC Motherboard BIOS Settings.
+
+1. Disable Virtualization.  
+2. Disable VT-X / VT-D (intel) & Iommu (AMD)
+3. Disable TPM & Secureboot.
+
+The turn off methods for each brand's motherboard vary. Please search directly on Google for the detailed guidelines to fully disable all settings above. (Customer service may not always be available, so it's better to search first.)
+
+---
+# ④ DMA Speed Test Results Error, Initialization Failed
+> We need to confirm the issue based on the corresponding test feedback. Please compare your test results with the problem here and handle it according to the corresponding solution.
+
+### Issue ①
+- **Issue Analysis**  
+This error typically occurs due to the incompatibility of the current DMA inserted into this motherboard slot.
+
+- **Troubleshooting**  
+Replace the DMA and install it in a different slot.
+
+### Issue ②
+
+- **Issue Analysis**  
+The cause of this problem is the Main PC motherboard's restriction on DMA memory reading.
+
+- **Troubleshooting**  
+The motherboard's restriction can be disabled by adjusting BIOS settings (disabling virtualization, VT-D/IOMMU, secure boot). Detailed instructions for settings can be found in the tutorial provided above.
+
+However, for some laptops, Gigabyte motherboards, Lenovo Alienware HP, and other branded complete machines, restrictions cannot be disabled by setting the BIOS. The only option is to replace the motherboard or the entire computer.  
+
+[This is also why we do not recommend buying DMA for laptops with Gigabyte motherboards and branded complete PC. Currently, the best compatibility is with ASUS and MSI motherboards.]
+
+
+### Issue ③
+
+- **Issue Analysis**  
+The main issue here is that the secondary machine isn't connecting to the board, or the corresponding driver hasn't been installed, or the board isn't powered.
+
+- **Troubleshooting**
+    - Confirm that the Main PC is powered on and the DMA light is lit. (If the Main PC is on but the DMA light isn't lit, refer to the [**Issue ①**](/en/hardware-guide/dma/troubleshoot#issue-①) or double check the kill switch isn't turned on. If the issue persists after handling it, please contact customer support via ticket)
+    - If the DMA light is on, verify whether the driver for the Second PC installed or if it can recognize the DMA USB driver. (If the driver hasn't been installed, refer to the Installation Manual: [DMA Installation User Manual](/en/hardware-guide/dma/setup) )
+
+Confirm if only one software is running, DMA only allows one software to use it. So if a software is currently occupying the DMA, all subsequent software that needs to use the DMA will fail to run successfully. Therefore, when opening DMA software, testing cannot be run at the same time, or when running a test, new DMA software or speedtest files cannot be opened at the same time.
+
+
+### Issue ④
+- **Issue Analysis**  
+This usually indicates that something is missing in the Windows system of the Second PC.
+- **Troubleshooting**  
+Reinstall the Second PC Windows. It is recommended to install the original version from microsoft and not modded windows.
+
+
+### Issue ⑤
+
+- **Issue Analysis**  
+This problem may be due to DMA damage or a Firmware Incompatible.
+
+- **Troubleshooting**  
+Please power off and reinstall the DMA, then confirm the status of the DMA indicator lights. If one light is constantly on and another light keeps flashing, it indicates a firmware problem. Contact the seller to obtain a new firmware. If burning the new firmware still results in this error, please contact the seller for the next step of troubleshooting.

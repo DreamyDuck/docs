@@ -1,0 +1,80 @@
+---
+title: "RS232 DMA Burning"
+description: "Instruction to fetch DMA's DNA ID"
+icon: 'asterisk'
+---
+<Warning>
+    Please plug the type-C data cable into the second interface of the DMA board (if there is only one, it means your interface is either a two-in-one or does not support JTAG). The end of the data cable is connected to the 2PC (Radar PC).
+</Warning>
+<Warning>
+    If you are using DMA for Valorant/Faceit. Make sure your `VALORANT` and `VANGUARD` both are not installed!! Uninstall both before inserting your DMA into your pc / firmware burning.
+</Warning>
+<Note>
+    Make sure both PC have all VC runtime environments installed.
+</Note>
+
+---
+
+# Download Tools below & Extract it
+<Card title="Firmware Tools Pack" icon="screwdriver-wrench" href="https://alist.scarlet.technology/d/Tools/DNA_ID.zip?sign=vuf3WnCBzIxn6lB9pEeAf8n4A1mycZEHfnsIMCzrm_U=:0">Download & Extract the files into a folder</Card>
+
+---
+
+# Burn Firmware
+### Install Driver
+
+1. Download the tools above and extract. Open `Drivers` folder -> Run `zadiag.exe`
+2. Click `Options` -> `List All Devices`
+<Frame>
+      <img src="/en/images/dna1.png" />
+    </Frame>
+3. On USB Device, Choose `Quad RS232-HS (Interface 0)`.
+<Warning>
+    You must select “Interface 0", otherwise it is likely to cause DMA damage.
+</Warning>
+<Note>
+    Can't find the device? Double check your dma is plugged to JTAG port or try [**CH347 DMA Burning**](/en/hardware-guide/firmware/burning-manual/ch347)
+</Note>
+<Frame>
+      <img src="/en/images/dna2.png" />
+    </Frame>
+4. Press `Replace Driver` or `Install Driver` and wait until the driver installed, installation take up to 5 minutes.
+<Frame>
+      <img src="/en/images/dna3.png" />
+    </Frame>
+    <Frame>
+      <img src="/en/images/dna4.png" />
+    </Frame>
+    <Frame>
+      <img src="/en/images/dna5.png" />
+</Frame>
+
+<Info> After successfully, close the zadiag and goto next step.</Info>
+
+---
+
+### Firmware Burning
+1. Move / Paste the firmware you received from us into Flash Tools folder.
+2. Rename the firmware file to `scarlet.bin`.
+3. Run `#####flash_rs232_35t#####.bat` if your DMA board using `35T`.  
+Run `#####flash_rs232_75t#####.bat` if your DMA board using `75T`.
+
+4. Firmware burning takes up to 5 minutes. It may stuck at `sector 21` or `23` for while.
+
+<Frame>
+      <img src="/en/images/burning0.png" />
+</Frame>
+
+5. Wait until firmware burning complete.
+6. Make a complete restart loop on `Main PC`:  
+    a. Shutdown the PC. (Not Restart)  
+    b. Fully cut off the power for 30s. (Unplug from socket)  
+    c. Power On the PC  
+7. Once **Step 6** is complete, make a speed test [**SpeedTest**](/en/hardware-guide/dma/speed-test) on **Second PC**.
+8. All done once speed appear. Double check device manager on Main PC, make sure the driver appeared in device manager.
+
+<Warning>
+    Some devices can achieve read speeds on a **Second PC** even without having the drivers installed, while others cannot. 
+
+    Therefore, the safest approach is to check the `device manager` on the **Main PC** to ensure that the drivers are properly installed.
+</Warning>

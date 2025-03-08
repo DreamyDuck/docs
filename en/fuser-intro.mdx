@@ -1,0 +1,97 @@
+---
+title: "Introduction to Fuser"
+description: "Details about Fuser and its importance"
+icon: 'info'
+---
+
+<Note>
+  Quick Links:
+  - [Official Website](https://scarlet.technology/)
+  - [Store](https://scarlet.technology/en/shop/)
+  - [Firmware Updates](https://scarlet.technology/product/scarlet-firmware/)
+</Note>
+
+# Direct Memory Access (DMA)
+
+## Overview
+
+Direct Memory Access (DMA) is a high-level cheating method used in video games that is particularly difficult to detect. This guide explains what DMA is, how it works, and requirements for using it.
+
+## What is DMA?
+
+DMA is a feature that allows hardware to access system memory directly, bypassing the CPU. Since DMA operates at the hardware level outside normal OS operations, it can manipulate game data without detection by traditional anti-cheat systems that monitor software behavior.
+
+### How it Works
+
+DMA uses a small board (approximately palm-sized) that fits into a PCIe slot, similar to a graphics card slot. This board connects via data cable to a second computer.
+
+<Note>
+Credit: [Ufrisk](https://github.com/ufrisk/pcileech) - Original Creator of PciLeech
+</Note>
+
+<Frame>
+  <img src="/images/image (22).png" alt="DMA System Diagram" />
+</Frame>
+
+Here's what a DMA board looks like - it's very thin and will generally fit in any extra PCIe slot:
+
+<Frame>
+  <img src="/images/image (23).png" alt="DMA Board" />
+</Frame>
+
+<Tip>
+If your graphics card blocks remaining PCIe slots, you may need to purchase a PCIe extender.
+</Tip>
+
+## System Requirements
+
+### Checking DMA Compatibility 
+
+To determine if your motherboard supports DMA:
+
+1. Press `WIN+R` and type `msinfo32.exe`
+2. Look for "Kernel DMA Protection" in the system information
+3. If it shows **OFF**, your motherboard supports DMA
+
+<Frame>
+  <img src="/images/image (25).png" alt="Kernel DMA Protection Check" />
+</Frame>
+
+<Warning>
+If Kernel DMA Protection shows as **ON**, you'll need to disable it in your BIOS settings. Note that some motherboards (like certain Gigabyte models) cannot disable this feature and therefore don't support DMA.
+</Warning>
+
+### Primary Computer Requirements
+
+DMA requires two computers to function. For the primary gaming PC:
+
+#### Desktop Requirements
+- Available PCIe slot (x16, x4, or x1)
+- PCIe extender if slots are blocked by GPU
+- Sufficient performance to run games smoothly
+
+#### Laptop Requirements (Not Recommended)
+Must have one of:
+- Extra M.2 slot (for M.2 to PCIe converter)
+- Extra M.2 slot (for M.2 version DMA)
+- Thunderbolt 3 port (for Thunderbolt to PCIe converter)
+
+<Note>
+External PSU may be needed to power DMA when using M.2 conversion
+</Note>
+
+### Secondary Computer Requirements
+
+The second computer can be either desktop or laptop with:
+
+**Minimum Specs:**
+- CPU: Intel i5 4th gen or better
+- GPU: Integrated or discrete
+
+**Recommended Specs:**
+- CPU: Intel i5 9th gen / Ryzen 5600G or better
+- GPU: Integrated or discrete
+
+<Warning>
+For fuser usage, the secondary computer's CPU/GPU must support output matching the main screen's resolution. Consult our community for compatibility guidance.
+</Warning>

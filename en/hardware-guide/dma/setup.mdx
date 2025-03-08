@@ -3,3 +3,51 @@ title: "Setup Instruction"
 description: "Setup and configuration guide for DMA Board"
 icon: 'star'
 ---
+<Warning><strong>Completely Power Off Main PC</strong>.  
+Before installing DMA, you must power off the PC and disconnect the power. Inserting or removing DMA while the power is on may damage the DMA board.</Warning>
+<Warning><strong>About Kill Switch</strong>.  
+For DMA devices with a built-in switch, turning it on and off must be done while the PC is turned off. Turning the DMA switch on or off while the PC is powered on can easily damage the DMA.</Warning>
+<Tip>
+<strong>Prioritize choosing a USB 3.0 port > USB Type-C</strong>  
+Prioritize choosing a USB 3.0 port. If not available, consider purchasing a Type-C to USB 3.0 (blue port) adapter. Otherwise, the speed measurement rate might be affected.
+</Tip>
+<Info>
+Both Runtime Libraries below are required for DMA to run correctly.
+</Info>
+<CardGroup cols={2}>
+  <Card title="VC Runtime All in One Pack" icon="cube" href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/">
+    Download, Extract and Install all the VC Runtime Library with install script
+  </Card>
+  <Card title="DirectX Runtime" icon="cube" href="https://www.microsoft.com/en-us/download/details.aspx?id=35">
+    Download and Install DirectX Runtime Library
+  </Card>
+</CardGroup>
+# Preparation
+1. Install DMA board to PCIE Slots as image below.
+<Frame>
+      <img src="/en/images/dma0.png" />
+    </Frame>
+<Check>PCIe x16, x4 and x1 is supported.</Check>
+
+2. Fix the DMA to the casing using the screws, refer to the fixing method of the graphics card.
+3. Connect the DMA (Data Port) to the second pc. Preferred plug into USB3.1 interface.
+3. As long as your DMA is properly fixed, the data cable can be plugged and unplugged at will, regardless of whether the computer is turned on or not. However, when plugging or unplugging the DMA itself, the gaming computer must be powered off!!!
+---
+# Driver Installation
+<Card title="Download DMA Driver" icon="cube" href="https://alist.scarlet.technology/Hardware/DMA%20Firmware">
+FTDI SuperSpeed-FIFO Driver
+</Card>
+1. Extract the downloaded driver directly to the desktop.
+2. Right-click on the `Start` icon in the lower left corner, select `Device Manager`.
+3. Right-click on the `FTDI SuperSpeed-FIFO Bridge` icon with an exclamation mark.
+4. Select `Update driver`, click `Browse my computer for driver software`, click `Browse`, select the driver folder we extracted to the desktop, and then click `OK` to install the driver.
+<Frame>
+      <img src="/en/images/dma1.png" />
+       -> 
+      <img src="/en/images/dma2.png" />
+    </Frame>
+
+5. After installation, we need to confirm whether the driver is displayed in the device list. Some users' computers may automatically install the driver, so in this case, the `FTDI SuperSpeed-FIFO Bridge` icon with an ! mark cannot be found in the previous step, and we also need to confirm whether the driver has been automatically installed by the computer.
+6. Right-click `Start` and click `Device Manager`. Expand `Universal Serial Bus controllers` and check whether `FTDI FT601 USB 3.0 Bridge Device` can be found.
+<Warning>**Don't plug on USB Extender / Docker !!!** 
+Some users may not have enough USB ports on the second computer and may plug the data cable connecting the DMA into a docking station / USB extender. In this case, there is a chance that the radar computer may not be able to read the DMA data cable driver. To test the DMA, it is recommended to plug the data cable directly into the USB port on the second computer.</Warning>
