@@ -4,94 +4,84 @@ description: "Details about Kmbox and its importance"
 icon: 'info'
 ---
 
-<Note>
-  Quick Links:
-  - [Official Website](https://scarlet.technology/)
-  - [Store](https://scarlet.technology/en/shop/)
-  - [Firmware Updates](https://scarlet.technology/product/scarlet-firmware/)
-</Note>
+---
 
-# Direct Memory Access (DMA)
-
-## Overview
-
-Direct Memory Access (DMA) is a high-level cheating method used in video games that is particularly difficult to detect. This guide explains what DMA is, how it works, and requirements for using it.
-
-## What is DMA?
-
-DMA is a feature that allows hardware to access system memory directly, bypassing the CPU. Since DMA operates at the hardware level outside normal OS operations, it can manipulate game data without detection by traditional anti-cheat systems that monitor software behavior.
-
-### How it Works
-
-DMA uses a small board (approximately palm-sized) that fits into a PCIe slot, similar to a graphics card slot. This board connects via data cable to a second computer.
-
-<Note>
-Credit: [Ufrisk](https://github.com/ufrisk/pcileech) - Original Creator of PciLeech
-</Note>
-
+# Complete DMA Workflow
 <Frame>
-  <img src="/images/image (22).png" alt="DMA System Diagram" />
+      <img src="/en/images/workflow.png" />
 </Frame>
 
-Here's what a DMA board looks like - it's very thin and will generally fit in any extra PCIe slot:
+## What is Kmbox?
 
-<Frame>
-  <img src="/images/image (23).png" alt="DMA Board" />
-</Frame>
+The **KMbox** (Keyboard & Mouse Emulation Box) is a hardware device commonly used in **DMA (Direct Memory Access) cheat setups** to automate or enhance keyboard/mouse inputs in games while evading anti-cheat detection. Unlike software-based input tools, the KMbox mimics physical peripherals at the hardware level, making it harder for anti-cheat systems like **EasyAntiCheat**, **BattlEye**, or **Vanguard** to detect suspicious activity.
 
-<Tip>
-If your graphics card blocks remaining PCIe slots, you may need to purchase a PCIe extender.
-</Tip>
+## Role in DMA Cheats
 
-## System Requirements
+### Hardware-Level Input Emulation
+The KMbox acts as a bridge between the **Second PC (Cheat PC)** (running cheat software) and the **Gaming PC**. It converts digital commands (e.g., recoil control scripts, rapid-fire macros) into hardware-level keyboard/mouse signals, making inputs appear as if they originate from a legitimate peripheral.
 
-### Checking DMA Compatibility 
+### Integration with DMA
+- The **DMA card** reads game memory data (e.g., player positions, weapon stats) from the gaming PC.
+- The cheat PC processes this data and sends instructions to the KMbox, which executes the inputs on the gaming PC.
+- This separation ensures the gaming PC never runs cheat software directly, reducing detection risks.
 
-To determine if your motherboard supports DMA:
+## Key Features
 
-1. Press `WIN+R` and type `msinfo32.exe`
-2. Look for "Kernel DMA Protection" in the system information
-3. If it shows **OFF**, your motherboard supports DMA
+| Feature | Description |
+|---------|-------------|
+| **Anti-Detect Inputs** | Emulates human-like mouse movements and keystrokes, bypassing software-level anti-cheat scans. |
+| **Macro Scripting** | Supports custom scripts for recoil control, rapid fire, auto-loot, or building (e.g., Fortnite). |
+| **Plug-and-Play** | No drivers required; works via USB passthrough or network (Wi-Fi/ETH models). |
+| **Cross-Platform** | Compatible with PC, PlayStation, Xbox, and even mobile devices via adapters. |
+| **Low Latency** | Sub-1ms response time for real-time input execution (critical for competitive gaming). |
 
-<Frame>
-  <img src="/images/image (25).png" alt="Kernel DMA Protection Check" />
-</Frame>
+## Common Use Cases
 
-<Warning>
-If Kernel DMA Protection shows as **ON**, you'll need to disable it in your BIOS settings. Note that some motherboards (like certain Gigabyte models) cannot disable this feature and therefore don't support DMA.
-</Warning>
+- **Recoil Control**: Automatically adjusts mouse movements to counteract weapon recoil patterns (e.g., *CS2*, *Apex Legends*).
+- **Aimbot Assistance**: Smooths aim movements toward targets (when paired with DMA-based ESP data).
+- **Rapid Fire**: Bypasses fire-rate limits in semi-automatic weapons.
+- **Automated Actions**: Triggers keystrokes for repetitive tasks (e.g., looting, building).
 
-### Primary Computer Requirements
+## Setup in a DMA Cheat System
 
-DMA requires two computers to function. For the primary gaming PC:
+### Hardware Connections
+- **Gaming PC** → Connected to KMbox via USB.
+- **KMbox** → Linked to **Second PC (Cheat PC)** via USB, Wi-Fi, or Ethernet (depending on model).
+- **DMA Card** → Installed in the **Main PC** to read gaming PC memory.
 
-#### Desktop Requirements
-- Available PCIe slot (x16, x4, or x1)
-- PCIe extender if slots are blocked by GPU
-- Sufficient performance to run games smoothly
+### Software Configuration
+- Load custom scripts (e.g., Lua/Python) into the KMbox's firmware.
+- Sync DMA data (e.g., enemy coordinates) with input scripts for dynamic adjustments.
 
-#### Laptop Requirements (Not Recommended)
-Must have one of:
-- Extra M.2 slot (for M.2 to PCIe converter)
-- Extra M.2 slot (for M.2 version DMA)
-- Thunderbolt 3 port (for Thunderbolt to PCIe converter)
+### Example Workflow
+- DMA card detects an enemy's position via memory reading.
+- Cheat PC calculates optimal aim trajectory.
+- KMbox translates this into mouse movements on the gaming PC.
 
-<Note>
-External PSU may be needed to power DMA when using M.2 conversion
-</Note>
+## Advantages Over Software Tools
 
-### Secondary Computer Requirements
+- **Undetectable by Design**: Operates at the hardware level, avoiding memory scans or kernel-level anti-cheat checks.
+- **Versatility**: Works with consoles and PCs, unlike DMA-only setups.
+- **Customization**: Scripts can be fine-tuned for specific games or playstyles.
 
-The second computer can be either desktop or laptop with:
+## Limitations
 
-**Minimum Specs:**
-- CPU: Intel i5 4th gen or better
-- GPU: Integrated or discrete
+- **Complexity**: Requires scripting knowledge to maximize effectiveness.
+- **Firmware Risks**: Kmbox firmware is not open source, so there is no way to obtain custom firmware. (The official provides routine firmware updates every month)
 
-**Recommended Specs:**
-- CPU: Intel i5 9th gen / Ryzen 5600G or better
-- GPU: Integrated or discrete
+## Popular KMbox Models
 
-<Warning>
-For fuser usage, the secondary computer's CPU/GPU must support output matching the main screen's resolution. Consult our community for compatibility guidance.
-</Warning>
+1. **KMbox A**: Very old version, use for basic script control.
+2. **KMbox B + / B Pro+**: On the market for over three years, this product has recently been detectable by several anti-cheat systems due to its use of a COM port.
+3. **KMbox Network**: Based on the Kmbox B+ upgrade, it has been modified to use a network port to control the host, which is much safer and more stable compared to the B series.
+4. **KMbox NVideo**: Basically its a Kmbox Network + Built-in capture card. More often used with AI products.
+
+## Comparison to Similar Tools
+
+| Tool | Detection Risk | Input Customization | DMA Compatibility |
+|------|----------------|---------------------|-------------------|
+| **KMbox** | Very Low | High | Yes |
+| **Arduino** | Low | Moderate | Yes |
+| **AutoHotkey** | High | High | No |
+
+In summary, the **KMbox** is a critical component in advanced DMA cheat setups, enabling undetectable, hardware-level input automation. When paired with DMA memory reading and a cheat PC, it provides a robust solution for gaining competitive advantages without direct software interaction.

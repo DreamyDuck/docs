@@ -12,9 +12,28 @@
     "languages": [
       {
         "language": "en",
+        "global": {
+      "anchors": [
+        {
+          "anchor": "Official Website",
+          "href": "https://scarlet.technology",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.scarlet.technology/",
+          "icon": "discord"
+        },        
+        {
+          "anchor": "View Purchased Key",
+          "href": "https://scarlet.technology/my-account/view-license-keys/",
+          "icon": "key"
+        }
+      ]
+    },
         "tabs": [
           {
-            "tab": "Guides",
+            "tab": "DMA Guides",
             "groups": [
               {
                 "group": "Get Started",
@@ -142,11 +161,49 @@
                 ]
               }
             ]
+          },
+          {
+            "tab": "No-HWID & Spoofer Guides",
+            "groups": [
+              {
+                "group": "Get Started",
+                "pages": ["en/no-hwid-guide/introduction"]
+              },
+              {
+                "group": "No-HWID Guides",
+                "icon": "angle-right",
+                "pages": ["en/no-hwid-guide/no-hwid/setup"]
+              },
+              {
+                "group": "Spoofer Guides",
+                "icon": "angle-right",
+                "pages": ["en/no-hwid-guide/spoofer/setup"]
+              }
+            ]
           }
         ]
       },
       {
         "language": "cn",
+        "global": {
+      "anchors": [
+        {
+          "anchor": "Scarlet 官网",
+          "href": "https://scarlet.technology",
+          "icon": "globe"
+        },
+        {
+          "anchor": "社区",
+          "href": "https://discord.scarlet.technology/",
+          "icon": "discord"
+        },        
+        {
+          "anchor": "查看已购密钥",
+          "href": "https://scarlet.technology/my-account/view-license-keys/",
+          "icon": "key"
+        }
+      ]
+    },
         "tabs": [
           {
             "tab": "指南",
@@ -204,26 +261,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Website",
-          "href": "https://scarlet.technology",
-          "icon": "globe"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://discord.scarlet.technology/",
-          "icon": "discord"
-        },        
-        {
-          "anchor": "View Purchased Key",
-          "href": "https://scarlet.technology/my-account/view-license-keys/",
-          "icon": "key"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/all.svg",

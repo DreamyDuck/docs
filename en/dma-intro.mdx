@@ -4,12 +4,12 @@ description: "Details about DMA and its importance"
 icon: 'info'
 ---
 
-<Note>
-  Quick Links:
-  - [Official Website](https://scarlet.technology/)
-  - [Store](https://scarlet.technology/en/shop/)
-  - [Firmware Updates](https://scarlet.technology/product/scarlet-firmware/)
-</Note>
+---
+
+# Complete DMA Workflow
+<Frame>
+      <img src="/en/images/workflow.png" />
+</Frame>
 
 # Direct Memory Access (DMA)
 
@@ -30,13 +30,13 @@ Credit: [Ufrisk](https://github.com/ufrisk/pcileech) - Original Creator of PciLe
 </Note>
 
 <Frame>
-  <img src="/images/image (22).png" alt="DMA System Diagram" />
+  <img src="/en/images/intro1.png" alt="DMA System Diagram" />
 </Frame>
 
 Here's what a DMA board looks like - it's very thin and will generally fit in any extra PCIe slot:
 
 <Frame>
-  <img src="/images/image (23).png" alt="DMA Board" />
+  <img src="/en/images/intro2.png" alt="DMA Board" />
 </Frame>
 
 <Tip>
@@ -54,16 +54,18 @@ To determine if your motherboard supports DMA:
 3. If it shows **OFF**, your motherboard supports DMA
 
 <Frame>
-  <img src="/images/image (25).png" alt="Kernel DMA Protection Check" />
+  <img src="/en/images/intro3.png" alt="Kernel DMA Protection Check" />
 </Frame>
 
 <Warning>
 If Kernel DMA Protection shows as **ON**, you'll need to disable it in your BIOS settings. Note that some motherboards (like certain Gigabyte models) cannot disable this feature and therefore don't support DMA.
 </Warning>
 
-### Primary Computer Requirements
+---
 
-DMA requires two computers to function. For the primary gaming PC:
+## Primary Computer Requirements
+
+DMA requires two computers to function. For the **Gaming PC**:
 
 #### Desktop Requirements
 - Available PCIe slot (x16, x4, or x1)
@@ -80,17 +82,17 @@ Must have one of:
 External PSU may be needed to power DMA when using M.2 conversion
 </Note>
 
-### Secondary Computer Requirements
+## Second Computer Requirements
 
 The second computer can be either desktop or laptop with:
 
 **Minimum Specs:**
 - CPU: Intel i5 4th gen or better
-- GPU: Integrated or discrete
+- GPU: Integrated or Dedicated Graphic Card
 
 **Recommended Specs:**
 - CPU: Intel i5 9th gen / Ryzen 5600G or better
-- GPU: Integrated or discrete
+- GPU: Integrated or Dedicated Graphic Card **(Minimum support must be the same resolution as a Gaming PC)**
 
 <Warning>
 For fuser usage, the secondary computer's CPU/GPU must support output matching the main screen's resolution. Consult our community for compatibility guidance.
