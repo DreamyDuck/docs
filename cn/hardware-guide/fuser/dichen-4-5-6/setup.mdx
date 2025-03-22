@@ -1,0 +1,217 @@
+---
+title: "设置说明"
+description: "地辰 V4/V5/V6 的设置说明"
+icon: 'star'
+---
+<CardGroup cols={2}>
+  <Card icon="download" href="https://alist.scarlet.technology" title="工具集">
+    下载并解压地辰 V4/V5/V6 融合器的工具集
+</Card>
+  <Card title="显示器资产管理器" icon="download" href="https://entechtaiwan.com/files/mi_setup.exe">
+    从官方网站下载显示器资产管理器
+  </Card>
+</CardGroup>
+
+# 需要准备的内容
+- 一台带有 HDMI 端口的**主 PC（游戏 PC）**，能够输出所需的分辨率和刷新率。
+- 一台带有 HDMI 端口的**第二台 PC（作弊 PC）**，能够输出所需的分辨率和刷新率。
+- 3 条 HDMI 线缆，能够输出所需的分辨率和刷新率。
+
+<Warning>
+    **在开始官方安装教程之前，有一些重要信息您需要了解。**
+    1. 输入到融合器的分辨率必须相同。（刷新率可以不同）
+    - 例如，如果主 PC 输入 1080p 240Hz，第二台 PC 输入 1080p 60Hz，输出结果将导致 ESP 渲染叠加层仅以 60fps 运行。因此，ESP 渲染叠加层会出现卡顿。
+</Warning>
+
+---
+
+# 设置说明
+
+### ① 获取 EDID 文件
+<Warning>
+    所有操作都应在**主 PC（游戏 PC）**上进行！！！
+</Warning>
+1. 使用 HDMI 线缆连接**主 PC（游戏 PC）**和**主显示器**。
+2. 右键点击桌面并点击`显示设置`。
+<Frame>
+      <img src="/cn/images/dichenv0.png" />
+</Frame>
+3. 更改为您想要的分辨率和刷新率（建议设置为显示器的最大设置）。例如，如果您想使用融合器在 1080p240hz 下运行，请将显示设置为 1080p + 240hz。
+<Frame>
+      <img src="/cn/images/dichenv1.png" />
+</Frame>
+<Frame>
+      <img src="/cn/images/dichenv2.png" />
+</Frame>
+
+4. 提取 .bin（EDID 文件）。
+<Note>
+    - 下载 `Monitor Asset Manager Setup.exe` 并保存到您想要的位置。
+    - 运行 `Monitor Asset Manager Setup.exe` 并完成安装。
+    - 如果安装后没有自动启动，请在 Windows 搜索栏中搜索 `Moninfo` 并以`管理员`身份运行。
+
+    <Frame>
+      <img src="/cn/images/dichenv3.png" />
+</Frame>
+
+    - 确保选中`实时`。
+    <Frame>
+      <img src="/cn/images/dichenv4.png" />
+</Frame>
+
+    - 点击`文件`然后点击`另存为...`
+
+    <Frame>
+      <img src="/cn/images/dichenv5.png" />
+</Frame>
+
+    - 保存到您想要的位置并命名为您喜欢的名称。桌面通常是最简单的选择。
+</Note>
+ 
+### ② 将 EDID 注入融合器
+1. 设置融合器
+    - 将包装盒中提供的电源线连接到融合器并打开电源。
+    <Frame>
+      <img src="/cn/images/dichenv6.png" />
+    </Frame>
+
+    - 您应该看到第一个指示灯"D1"亮起（如果没有亮起，请按下大的红色电源按钮）
+    <Frame>
+      <img src="/cn/images/dichenv7.png" />
+    </Frame>
+
+2. 连接数据线并安装驱动程序
+<Warning>
+    所有操作都应在**主 PC（游戏 PC）**上完成！！！
+</Warning>
+
+3. 拿起您的 USB-C 转 USB-A 线缆。
+4. 将 USB-C 端插入融合器；USB-A 端插入您的**主 PC（游戏 PC）**。
+<Frame>
+      <img src="/cn/images/dichenv8.png" />
+</Frame>
+
+5. 在 Windows 搜索栏中搜索`设备管理器`并打开它。
+<Frame>
+      <img src="/cn/images/dichenv9.png" />
+</Frame>
+
+6. 在`端口（COM 和 LPT）`下应该看起来像这样。如果是，请跳到下一个主要步骤。如果不是，请继续**步骤 7**。
+<Frame>
+      <img src="/cn/images/dichenv10.png" />
+</Frame>
+
+7. 如果不是并显示为`USB 串行`，请完成`驱动程序安装`。
+<Frame>
+      <img src="/cn/images/dichenv11.png" />
+</Frame>
+
+8. 安装驱动程序 
+<Card icon="download" title="CH340 驱动程序" href="https://alist.scarlet.technology">
+    用于 Kmbox 的 CH340 驱动程序
+</Card>
+    > 1. 从上方下载 `CH340 驱动程序`。
+    > 2. 解压文件夹并打开解压后的文件夹。
+    > 3. 右键点击 `CH341SER.EXE` 并点击`以管理员身份运行`。
+    <Frame>
+      <img src="/cn/images/dichenv12.png" />
+    </Frame>
+    > 4. 点击`安装`然后点击`确定`。
+    <Frame>
+      <img src="/cn/images/dichenv13.png" />
+    </Frame>
+    > 5. 现在回到`设备管理器`，您应该看到融合器出现在端口（COM 和 LPT）下
+    > 6. 记下它所在的 COM 端口。例如，我的在 COM3 上（如果您有多个 COM 端口显示，只需拔掉融合器，看看哪个消失，然后重新插入）
+    <Frame>
+      <img src="/cn/images/dichenv14.png" />
+    </Frame>
+
+### ③ 注入 EDID
+<Card icon="download" title="EDID 注入器" href="https://alist.scarlet.technology/Users/Hardware/Fuser/Dichen%20V4%20V5%20V6%20[2k@144]">
+    地辰 EDID 注入器
+</Card>
+1. 从上方下载 EDID 注入器。
+2. 保存到您想要的位置，右键点击并点击`以管理员身份运行`。
+<Frame>
+      <img src="/cn/images/dichenv15.png" />
+    </Frame>
+3. 选择正确的 COM 端口。
+4. 选择您想要的分辨率。例如，我想要 1920x1080。
+5. 点击该按钮（这是自动注入的简单方式）。
+6. 点击该按钮浏览文件并选择您之前保存的 `.bin` 文件。
+7. 点击该按钮进行注入。
+<Frame>
+      <img src="/cn/images/dichenv16.png" />
+    </Frame>
+8. 您会看到一些随机字符弹出，这是正常的。关闭对话框，您可以关闭所有之前使用的应用程序和窗口
+9. 从主 PC 上拔下 USB-C 转 USB-A 线缆。
+
+### ④ 配置
+融合器上有 3 个端口。拿起您的 3 条 HDMI 线缆并按以下方式插入：
+- `HDMI` 连接到主显示器。
+- `HDMI1` 连接到主 PC（游戏 PC）。
+- `HDMI2` 连接到第二台 PC（游戏 PC）。
+<Frame>
+      <img src="/cn/images/dichenv17.png" />
+    </Frame>
+一旦所有内容都连接好，所有指示灯应该都会亮起。
+
+### ⓪ 指示灯含义
+- **D1** - 电源指示灯。如果指示灯亮起，表示有电源
+- **D2** - 融合/叠加状态。如果指示灯亮起，表示融合器正在叠加第二台 PC 的输出
+- **H2** - 第二台 PC 输入状态。如果指示灯亮起，表示融合器正在接收第二台 PC 的信号。
+- **H1** - 主 PC 输入状态。如果指示灯亮起，表示融合器正在接收主 PC 的信号。
+<Frame>
+      <img src="/cn/images/dichenv18.png" />
+    </Frame>
+
+**每个按钮都有功能：**
+- **K1** - 按一次：循环切换分辨率。它应该默认在 1080p。按按钮循环直到达到您想要的分辨率。
+按住：显示当前输入信息，如分辨率和刷新率。
+- **K2** - 增加融合强度/容差。数值越高，融合时删除的灰色越多。
+- **K3** - 将融合强度/容差重置为默认值。这是我使用的设置。它对我尝试过的每个作弊都很好用。
+- **K4** - 切换融合/叠加。
+<Frame>
+      <img src="/cn/images/dichenv19.png" />
+    </Frame>
+
+---
+
+# 一些问题的解决方案
+### 多显示器设置
+如果您想要，可以将多个显示器连接到第二台 PC。为了最简单的使用：
+<Note>
+    **使用场景**  
+    - 某些 DMA 软件使用客户端模式（菜单和雷达集成到一个软件中），这种类型的产品最好与输出两个 HDMI 连接的第二台 PC（作弊 PC）一起使用。
+    - 想要专用屏幕查看雷达的用户。（用户也可以在同一本地网络中的其他设备上直接访问雷达。）
+
+    **重要事项**  
+    - 您的**第二台 PC（作弊 PC）**必须至少有**两个视频输出 i/o（HDMI / DP）**和一个**第二显示器**。
+    - 某些产品有显示器选择选项，因此您可以直接使用该设置而不需要此设置。
+</Note>
+1. 首先，您的第二台 PC（作弊 PC）应该有两个 HDMI 端口，每个连接到：
+    -  融合器
+    -  第二显示器
+2. 在您的**第二台 PC（作弊 PC）**上，转到`显示设置`，您应该看到设置中出现两个显示器。
+<Frame>
+      <img src="/cn/images/dichenv0.png" />
+    </Frame>
+3. 选择输出到融合器的屏幕。要识别它，点击`识别`按钮，每个显示器的左下角应该出现一个数字。
+<Frame>
+      <img src="/cn/images/dichenv21.png" />
+    </Frame>
+4. 选择融合器输出显示器，勾选`将此显示器设为主显示器`。
+<Frame>
+      <img src="/cn/images/dichenv23.png" />
+    </Frame>
+5. 设置现在完成。运行 DMA 软件时，主显示器应该默认显示 ESP 和透视。将雷达客户端窗口拖到第二显示器，它将完美工作。
+
+### 重置融合器
+如果您想要将融合器重置为出厂设置（如果您的 EDID 不工作并且您已经尝试了所有选项，您可能会这样做），只需通过 USB-C 转 USB-A 线缆重新连接融合器并执行以下操作：
+
+1. 选择正确的 COM 端口。
+2. 选择所需的分辨率。
+3. 点击第三个按钮。
+<Frame>
+      <img src="/cn/images/dichenv20.png" />
+    </Frame>

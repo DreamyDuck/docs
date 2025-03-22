@@ -1,0 +1,66 @@
+---
+title: "设置说明"
+description: "Kmbox 网络版设置和配置指南"
+icon: 'star'
+---
+
+<Warning>
+  如果您的设备**在 2024.8.31 之后未激活**，请**不要**升级固件；  
+  如果您的设备**在 2024.8.31 之前已激活**，则支持正常升级。
+</Warning>
+
+# 准备工作
+1. 按照下图设置您的 Kmbox 网络版：
+<Frame>
+      <img src="/cn/images/net0.png" />
+</Frame>
+<Note>
+  如果您在单台 PC 上游戏，插入`串口`和`被控制 PC`的线缆都应连接到游戏 PC。
+</Note>
+
+---
+
+# 安装网络适配器驱动
+1. 将线缆插入网络端口后，将出现如下图所示的磁盘。
+2. 双击磁盘并运行其中的 exe 文件。
+3. 如果找不到磁盘，请手动下载驱动程序。
+<Card title="网络适配器驱动" icon="download" href="https://alist.scarlet.technology/d/Users/Hardware/Kmbox%20Net/kmboxNet_Driver.zip">网络适配器驱动，下载、解压并在**第二台 PC**上安装</Card>
+<Frame>
+      <img src="/cn/images/net1.png" />
+</Frame>
+
+---
+
+# 更改网络适配器 IP 地址
+1. 打开`控制面板` -> `网络和共享中心`
+<Frame>
+      <img src="/cn/images/net2.png" />
+</Frame>
+<Frame>
+      <img src="/cn/images/net3.png" />
+</Frame>
+
+2. 更改 IP 地址
+
+<Frame>
+      <img src="/cn/images/net4.png" />
+</Frame>
+
+<Frame>
+      <img src="/cn/images/net5.png" />
+</Frame>
+
+---
+
+# 检查是否能成功 ping 通
+1. 运行 `cmd.exe`
+<Frame>
+      <img src="/cn/images/net6.png" />
+</Frame>
+2. 检查是否能成功 ping 通 kmbox 的 IP。  
+```ping 192.168.x.x（您的 kmbox 的 IP）```
+<Frame>
+      <img src="/cn/images/net7.png" />
+</Frame>
+
+3. 如果显示如上所示，则设备已准备就绪。现在您可以参考 DMA 软件的进一步说明。

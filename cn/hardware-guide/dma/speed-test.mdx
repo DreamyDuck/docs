@@ -1,0 +1,63 @@
+---
+title: "速度测试"
+description: "DMA 板卡速度测试设置指南"
+icon: 'angle-right'
+---
+<CardGroup cols={2}>
+  <Card title="运行时库" icon="cube" href="https://alist.scarlet.technology/d/Tools/Runtime(Must%20Install).zip?sign=pYI_L1VHl2m3MOB9D7eMXx5b0bFnaPkydQlQNIiSAss=:0">
+    下载、解压并安装两个运行时库
+  </Card>
+  <Card title="速度测试工具" icon="screwdriver-wrench" href="https://alist.scarlet.technology/d/Tools/DMASpeedTest1.5.zip?sign=V8fkME5eo0kvBmFHirwD3fmFm3TPpBU9Qh_mWRrII0o=:0">
+    下载、解压并安装两个运行时库
+  </Card>
+</CardGroup>
+1. 从上面的卡片下载并安装系统运行时库。
+（下载后解压，双击运行，一直点击 `下一步` 直到安装完成）。
+2. 解压速度测试文件，然后双击 `DMATest.exe` 运行（不要以管理员身份运行）。当 `DMA 读写速率` 正常显示如下图所示时，表示 DMA 工作正常。
+<Frame>
+      <img src="/cn/images/dma3.png" />
+    </Frame>
+---
+# 关于速度测试
+由于使用不同的 DMA 和第二台电脑性能的差异，`DMA 读写速率` 可能会因 DMA 数据线连接的 USB 端口不同而不同。例如，使用 Enigma X1 并将 USB 3.1 GEN2 数据线连接到第二台电脑的 USB 3.1 端口时，速率可以超过 5000。
+
+如果您的速率低于 3000，请检查是否已将数据线连接到第二台电脑的 USB 3.0 端口。一般来说，仅依赖 DMA 的软件需要速率高于 3000 才能防止使用时的卡顿。但是，对于数据包软件如 Silver Shield Tarkov Radar 或 AG Radar，DMA 读写速率对雷达的影响很小。具体软件的原理将在其他文章中讨论。
+
+<Warning>
+**提醒**  
+DMA 的读写速度是每秒读写内存的次数，速度与软件性能密切相关。速度越高，体验越流畅。相反，速度低可能会导致卡顿、崩溃等问题。
+
+**影响 DMA 速度的因素有以下几个：**
+
+**第二台电脑**  
+目前，第二台电脑对 DMA 速度的影响最大，主要是由于其 CPU 和主板。如果第二台电脑性能太差，其速度会受到影响，导致软件用户体验差。一般建议使用集成显卡的台式电脑，CPU 集成显卡为 4 代 i5 或更高即可。笔记本电脑也可以作为第二台电脑，但速度相对台式电脑较低，需要 CPU 为 4 代 i5 或更高。如果您有额外的电脑作为第二台电脑，可以在收到板卡后测试速度。如果您还没有购买第二台电脑，建议购买整机 5600G 作为第二台电脑。您可以询问客服推荐的购买店铺。
+
+**第二台电脑的 USB 端口**  
+USB 端口的类型也会影响 DMA 速度，但最大的影响是在 USB 2.0 和 USB 3.0 之间。USB 2.0 的最大速度低于 3000。因此，请尽量插入 USB 3.0 以上的 USB 端口。建议将数据线插入蓝色或红色的 USB 端口。
+
+**数据线**  
+一般来说，板卡附带的数据线就足够了，但不排除数据线可能有问题。当您第一次运行测试文件并成功时，立即关闭测试文件并再次运行。如果测试失败，基本上是数据线的问题，需要更换数据线。
+
+**DMA 本身**  
+DMA 本身的影响只有在所有其他条件都最优的情况下才能体现。否则，基本上没有区别。目前，我们的 DMA 最高可以达到 10000 分以上，使用 I7-12700K CPU 作为第二台电脑。
+
+**主电脑主板**  
+目前，一些用户报告主电脑主板会影响 DMA 速度。不要直接购买整机或技嘉主板，包括联想、惠普等。
+</Warning>
+---
+# 如何实现高速/最大速度？
+- 优先选择 USB 3.0 端口 > USB Type-C
+- 优先选择 USB 3.0 端口。如果没有，请考虑购买 Type-C 转 USB 3.0（蓝色端口）适配器。否则，可能会影响速度测量率。
+- USB 3.0 数据线
+
+<Accordion title="⚡ 最高速度" defaultOpen="true">
+    - 支持雷电 3 的数据线 + 雷电 3 端口。  
+    - 获取 PCIE 转 USB 转换器（在第二台电脑上，必须是台式机）+ USB 3.0 数据线。（获得最高速度的最佳方式）
+    <Frame>
+      <img src="/cn/images/dma4.png" />
+    </Frame>
+</Accordion>
+
+
+
+

@@ -1,0 +1,60 @@
+---
+title: "CH347 DMA 烧录"
+description: "获取 DMA 的 DNA ID 的说明"
+icon: 'asterisk'
+---
+<Warning>
+    请将 Type-C 数据线插入 DMA 板的第二个接口（如果只有一个，说明您的接口要么是二合一的，要么不支持 JTAG）。数据线的另一端连接到第二台 PC（雷达 PC）。
+</Warning>
+<Warning>
+    如果您使用 DMA 玩 Valorant/Faceit。请确保您的 `VALORANT` 和 `VANGUARD` 都没有安装！！在将 DMA 插入 PC 或烧录固件之前，请卸载两者。
+</Warning>
+<Note>
+    确保两台 PC 都已安装所有 VC 运行时环境。
+</Note>
+
+---
+
+# 下载以下工具并解压
+<Card title="固件工具包" icon="screwdriver-wrench" href="https://alist.scarlet.technology/d/Tools/DNA_ID.zip?sign=vuf3WnCBzIxn6lB9pEeAf8n4A1mycZEHfnsIMCzrm_U=:0">下载并将文件解压到一个文件夹中</Card>
+
+---
+
+# 烧录固件
+### 安装驱动程序
+
+1. 下载上述工具并解压。打开 `Drivers` 文件夹 -> 打开 `CH341PAR` -> 打开 `CH341PAR` -> 运行并安装 `SETUP.exe`。
+
+<Note>
+    找不到设备？请仔细检查您的 DMA 是否已插入 JTAG 端口，或尝试[**RS232 DMA 烧录**](/cn/hardware-guide/firmware/burning-manual/rs232)
+</Note>
+
+<Info> 成功后，关闭 zadiag 并进入下一步。</Info>
+
+---
+
+### 固件烧录
+1. 将您从我们这里收到的固件移动/粘贴到 Flash Tools 文件夹中。
+2. 将固件文件重命名为 `scarlet.bin`。
+3. 如果您的 DMA 板使用 `35T`，运行 `#####flash_ch347_35t#####.bat`。  
+如果您的 DMA 板使用 `75T`，运行 `#####flash_ch347_75t#####.bat`。
+
+4. 固件烧录可能需要长达 5 分钟。它可能会在 `sector 21` 或 `23` 处停留一段时间。
+
+<Frame>
+      <img src="/cn/images/burning0.png" />
+</Frame>
+
+5. 等待固件烧录完成。
+6. 在`主 PC`上执行完整的重启循环：  
+    a. 关闭 PC。（不是重启）  
+    b. 完全切断电源 30 秒。（从插座拔下）  
+    c. 打开 PC 电源  
+7. 完成**步骤 6**后，在**第二台 PC**上进行速度测试 [**速度测试**](/cn/hardware-guide/dma/speed-test)。
+8. 一旦速度显示出来就全部完成。仔细检查主 PC 上的设备管理器，确保驱动程序出现在设备管理器中。
+
+<Warning>
+    某些设备即使没有安装驱动程序也能在**第二台 PC**上实现读取速度，而其他设备则不能。 
+
+    因此，最安全的方法是检查**主 PC**上的`设备管理器`，以确保驱动程序已正确安装。
+</Warning>

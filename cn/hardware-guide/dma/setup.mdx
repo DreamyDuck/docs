@@ -1,0 +1,53 @@
+---
+title: "设置说明"
+description: "DMA 板卡设置和配置指南"
+icon: 'star'
+---
+<Warning><strong>完全关闭主 PC 电源</strong>。  
+在安装 DMA 之前，您必须关闭 PC 并断开电源。在通电状态下插入或移除 DMA 可能会损坏 DMA 板卡。</Warning>
+<Warning><strong>关于开关</strong>。  
+对于内置开关的 DMA 设备，开关的开启和关闭必须在 PC 关闭状态下进行。在 PC 通电状态下开启或关闭 DMA 开关很容易损坏 DMA。</Warning>
+<Tip>
+<strong>优先选择 USB 3.0 端口 > USB Type-C</strong>  
+优先选择 USB 3.0 端口。如果没有，请考虑购买 Type-C 转 USB 3.0（蓝色端口）适配器。否则，可能会影响速度测量率。
+</Tip>
+<Info>
+以下两个运行时库都是 DMA 正常运行所必需的。
+</Info>
+<CardGroup cols={2}>
+  <Card title="VC 运行时库一键安装包" icon="cube" href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/">
+    下载、解压并使用安装脚本安装所有 VC 运行时库
+  </Card>
+  <Card title="DirectX 运行时库" icon="cube" href="https://www.microsoft.com/en-us/download/details.aspx?id=35">
+    下载并安装 DirectX 运行时库
+  </Card>
+</CardGroup>
+# 准备工作
+1. 按照下图将 DMA 板卡安装到 PCIE 插槽中。
+<Frame>
+      <img src="/cn/images/dma0.png" />
+    </Frame>
+<Check>支持 PCIe x16、x4 和 x1。</Check>
+
+2. 使用螺丝将 DMA 固定到机箱上，参考显卡的固定方法。
+3. 将 DMA（数据端口）连接到第二台 PC。优先插入 USB3.1 接口。
+3. 只要您的 DMA 固定正确，数据线可以随意插拔，无论电脑是否开机。但是，在插拔 DMA 本身时，游戏电脑必须关机！！！
+---
+# 驱动安装
+<Card title="下载 DMA 驱动" icon="cube" href="https://alist.scarlet.technology/Hardware/DMA%20Firmware">
+FTDI SuperSpeed-FIFO 驱动
+</Card>
+1. 将下载的驱动直接解压到桌面。
+2. 右键点击左下角的 `开始` 图标，选择 `设备管理器`。
+3. 右键点击带有感叹号的 `FTDI SuperSpeed-FIFO Bridge` 图标。
+4. 选择 `更新驱动程序`，点击 `浏览我的电脑以查找驱动程序软件`，点击 `浏览`，选择我们解压到桌面的驱动文件夹，然后点击 `确定` 安装驱动。
+<Frame>
+      <img src="/cn/images/dma1.png" />
+       -> 
+      <img src="/cn/images/dma2.png" />
+    </Frame>
+
+5. 安装后，我们需要确认驱动是否显示在设备列表中。某些用户的电脑可能会自动安装驱动，因此在这种情况下，在前面的步骤中找不到带有 ! 标记的 `FTDI SuperSpeed-FIFO Bridge` 图标，我们也需要确认电脑是否已自动安装驱动。
+6. 右键点击 `开始` 并点击 `设备管理器`。展开 `通用串行总线控制器` 并检查是否可以找到 `FTDI FT601 USB 3.0 Bridge Device`。
+<Warning>**不要插在 USB 扩展器/扩展坞上！！！** 
+某些用户可能在第二台电脑上没有足够的 USB 端口，可能会将连接 DMA 的数据线插入扩展坞/USB 扩展器。在这种情况下，雷达电脑可能无法读取 DMA 数据线驱动。为了测试 DMA，建议将数据线直接插入第二台电脑的 USB 端口。</Warning>

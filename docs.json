@@ -210,7 +210,7 @@
         "global": {
       "anchors": [
         {
-          "anchor": "Scarlet 官网",
+          "anchor": "官方网站",
           "href": "https://scarlet.technology",
           "icon": "globe"
         },
@@ -228,56 +228,171 @@
     },
         "tabs": [
           {
-            "tab": "指南",
+            "tab": "DMA 指南",
             "groups": [
               {
                 "group": "开始使用",
-                "pages": ["cn/introduction", "cn/quickstart"]
+                "pages": ["cn/introduction", "cn/dma-intro", "cn/fuser-intro", "cn/kmbox-intro"]
               },
               {
-                "group": "开发",
-                "pages": ["cn/development"]
-              },
-              {
-                "group": "功能",
+                "group": "加载器指南",
                 "pages": [
-                  "cn/supported-games",
-                  "cn/game-profiles",
-                  "cn/community-mods"
+                  "cn/product-manuals/loader/loader",
+                  "cn/product-manuals/loader/change-language", 
+                  "cn/product-manuals/loader/reset-hwid",
+                  "cn/product-manuals/loader/troubleshoot"
                 ]
               },
               {
-                "group": "支持",
-                "pages": ["cn/troubleshooting"]
+                "group": "游戏指南",
+                "pages": [
+                  {
+                    "group": "Apex英雄指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/apex-legends/apex-legends"]
+                  },
+                  {
+                    "group": "Arena Breakout指南",
+                    "icon": "user", 
+                    "pages": ["cn/product-manuals/arena-breakout/arena-breakout"]
+                  },
+                  {
+                    "group": "CS2指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/counter-strike-2/cs2"]
+                  },
+                  {
+                    "group": "黎明杀机指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/dead-by-daylight/dbd"]
+                  },
+                  {
+                    "group": "绝地求生指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/pubg/pubg"]
+                  },
+                  {
+                    "group": "The Finals指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/the-finals/finals"]
+                  },
+                  {
+                    "group": "Valorant指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/valorant/valorant"]
+                  }
+                ]
               },
               {
-                "group": "基础",
+                "group": "硬件指南",
                 "pages": [
-                  "cn/essentials/markdown",
-                  "cn/essentials/code",
-                  "cn/essentials/images",
-                  "cn/essentials/settings",
-                  "cn/essentials/navigation",
-                  "cn/essentials/reusable-snippets"
+                  {
+                    "group": "DMA板",
+                    "icon": "microchip",
+                    "pages": [
+                      "cn/hardware-guide/dma/setup",
+                      "cn/hardware-guide/dma/speed-test",
+                      "cn/hardware-guide/dma/troubleshoot"
+                    ]
+                  },
+                  {
+                    "group": "Fuser",
+                    "icon": "microchip",
+                    "pages": [
+                      {
+                        "group": "Dichen 4/5/6",
+                        "icon": "angle-right",
+                        "pages": ["cn/hardware-guide/fuser/dichen-4-5-6/setup"]
+                      },
+                      {
+                        "group": "Dichen Mini",
+                        "icon": "angle-right",
+                        "pages": [
+                          "cn/hardware-guide/fuser/dichen-mini/setup",
+                          "cn/hardware-guide/fuser/dichen-mini/troubleshoot"
+                        ]
+                      },
+                      {
+                        "group": "Dichen P1",
+                        "icon": "angle-right",
+                        "pages": [
+                          "cn/hardware-guide/fuser/dichen-p1/info",
+                          "cn/hardware-guide/fuser/dichen-p1/setup",
+                          "cn/hardware-guide/fuser/dichen-p1/firmware"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Kmbox",
+                    "icon": "microchip",
+                    "pages": [
+                      {
+                        "group": "B +",
+                        "icon": "angle-right",
+                        "pages": [
+                          "cn/hardware-guide/kmbox/b-plus/setup",
+                          "cn/hardware-guide/kmbox/b-plus/change-com",
+                          "cn/hardware-guide/kmbox/b-plus/kmbox-curve",
+                          "cn/hardware-guide/kmbox/b-plus/upgrade-firmware",
+                          "cn/hardware-guide/kmbox/b-plus/troubleshoot"
+                        ]
+                      },
+                      {
+                        "group": "Net",
+                        "icon": "angle-right",
+                        "pages": [
+                          "cn/hardware-guide/kmbox/net/setup",
+                          "cn/hardware-guide/kmbox/net/upgrade-firmware",
+                          "cn/hardware-guide/kmbox/net/kmbox-curve",
+                          "cn/hardware-guide/kmbox/net/troubleshoot"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "固件",
+                    "icon": "file",
+                    "pages": [
+                      "cn/hardware-guide/firmware/get-dna-id",
+                      {
+                        "group": "固件烧录手册",
+                        "icon": "angle-right",
+                        "pages": [
+                          "cn/hardware-guide/firmware/burning-manual/ch347",
+                          "cn/hardware-guide/firmware/burning-manual/rs232"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "ESP无Fuser方案",
+                    "icon": "eye",
+                    "pages": [
+                      "cn/hardware-guide/esp/moonlight",
+                      "cn/hardware-guide/esp/parsec"
+                    ]
+                  }
                 ]
               }
             ]
           },
           {
-            "tab": "API 参考",
+            "tab": "无HWID和反作弊指南",
             "groups": [
               {
-                "group": "API 文档",
-                "pages": ["cn/api-reference/introduction"]
+                "group": "开始使用",
+                "pages": ["cn/no-hwid-guide/introduction"]
               },
               {
-                "group": "端点示例",
-                "pages": [
-                  "cn/api-reference/endpoint/get",
-                  "cn/api-reference/endpoint/create",
-                  "cn/api-reference/endpoint/delete",
-                  "cn/api-reference/endpoint/webhook"
-                ]
+                "group": "无HWID指南",
+                "icon": "angle-right",
+                "pages": ["cn/no-hwid-guide/no-hwid/setup"]
+              },
+              {
+                "group": "反作弊指南",
+                "icon": "angle-right",
+                "pages": ["cn/no-hwid-guide/spoofer/setup"]
               }
             ]
           }

@@ -1,0 +1,75 @@
+---
+title: "设置说明"
+description: "地辰 P1 的设置说明"
+icon: 'asterisk'
+---
+
+---
+# 产品接口
+<Frame>
+      <img src="/cn/images/4k0.png" />
+</Frame>
+<Frame>
+      <img src="/cn/images/4k1.png" />
+</Frame>
+
+# 产品接线说明表
+
+| DC-12V | 变压器                           |
+| :--------: | :-------------------------------------: |
+| USB-C     | Type C (USB 2.0)                     |
+| OVERLAY      | 第二台 PC HDMI                          |
+| MAIN   | 主 PC DP |
+| MONITOR | 显示器输出 DP |
+
+---
+
+# 显示器融合器显示
+<Frame>
+      <img src="/cn/images/4k2.png" />
+</Frame>
+|       | 选项 1 | 选项 2 | 选项 3 | 选项 4 |
+| -------- | -------- | -------- | -------- | -------- | 
+| **显示模式**     | 混合（两者） | 仅主 PC | 仅第二台 PC | PIP-4（暂不可用） |
+| **图像强度（阈值）**  | 0-250 每个刻度 | 0-250 每个刻度 | 0-250 每个刻度 | 0-250 每个刻度 |
+| **画面窗口大小**   | 1/2 | 1/3 | 1/3 | - |
+| **背光持续时间** | 10秒 | 30秒 | 50秒 | 常亮 |
+
+---
+
+# 正确使用融合器的方法
+<Steps>
+  <Step title="正确连接所有线缆">
+    在打开融合器电源之前，请确保连接电源线、显示器 DP 线、**主 PC（游戏 PC）** DP 线和**第二台 PC（作弊 PC）** HDMI 线（如果需要，可以稍后再连接 HDMI 线）。
+  </Step>
+  <Step title="打开融合器电源并检查输出">
+    按下电源按钮。当红灯变为蓝灯并保持常亮时，融合器处于正常工作模式。几秒钟后，显示器应该显示图像。检查小屏幕以确保显示显示器信息，并且两个输入端口都已显示。
+  </Step>
+  <Step title="配置融合器设置">
+    在主单元和子单元上设置所需的刷新率。理想情况下，从列表中选择最高可用选项。
+  </Step>
+  <Step title="确认并应用所有设置">
+    使用旋转旋钮切换到下一个选项，然后按下旋钮确认。您可以调整四个参数。当白色光标处于活动状态时，您可以更改设置。按下旋钮确认后，它将返回到红色光标。
+  </Step>
+</Steps>
+
+---
+
+# 融合器错误指示灯
+<AccordionGroup>
+  <Accordion title="按下电源按钮后无指示灯" icon="circle-question" defaultOpen="true">
+    可能原因：主板硬件问题或电源适配器问题。
+  </Accordion>
+
+  <Accordion title="按下电源按钮后红灯熄灭" icon="circle-question" defaultOpen="true">
+    可能原因：硬件问题。
+  </Accordion>
+
+  <Accordion title="按下电源按钮后红灯变为蓝灯并闪烁" icon="circle-question" defaultOpen="true">
+    可能原因：硬件问题。
+  </Accordion>
+
+  <Accordion title="按下电源按钮后红灯变为绿灯并闪烁" icon="circle-question" defaultOpen="true">
+    可能原因：未激活或随机错误。
+  </Accordion>
+</AccordionGroup>

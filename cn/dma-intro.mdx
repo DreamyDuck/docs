@@ -1,0 +1,99 @@
+---
+title: "DMA 简介"
+description: "关于 DMA 及其重要性的详细信息"
+icon: 'info'
+---
+
+---
+
+# 完整的 DMA 工作流程
+<Frame>
+      <img src="/cn/images/workflow.png" />
+</Frame>
+
+# 直接内存访问 (DMA)
+
+## 概述
+
+直接内存访问 (DMA) 是一种在视频游戏中使用的难以检测的高级作弊方法。本指南将解释什么是 DMA、它是如何工作的，以及使用它的要求。
+
+## 什么是 DMA？
+
+DMA 是一种允许硬件直接访问系统内存的功能，绕过 CPU。由于 DMA 在正常操作系统操作之外的硬件层面运行，它可以在不被传统反作弊系统检测到的情况下操作游戏数据，这些系统主要监控软件行为。
+
+### 工作原理
+
+DMA 使用一个可以插入 PCIe 插槽的小型板卡（大约手掌大小），类似于显卡插槽。这个板卡通过数据线连接到第二台计算机。
+
+<Note>
+鸣谢：[Ufrisk](https://github.com/ufrisk/pcileech) - PciLeech 的原创作者
+</Note>
+
+<Frame>
+  <img src="/cn/images/intro1.png" alt="DMA 系统示意图" />
+</Frame>
+
+这就是 DMA 板卡的外观 - 它非常薄，通常可以放入任何额外的 PCIe 插槽：
+
+<Frame>
+  <img src="/cn/images/intro2.png" alt="DMA 板卡" />
+</Frame>
+
+<Tip>
+如果您的显卡挡住了剩余的 PCIe 插槽，您可能需要购买一个 PCIe 延长线。
+</Tip>
+
+## 系统要求
+
+### 检查 DMA 兼容性 
+
+要确定您的主板是否支持 DMA：
+
+1. 按 `WIN+R` 并输入 `msinfo32.exe`
+2. 在系统信息中查找"内核 DMA 保护"
+3. 如果显示为**关闭**，则您的主板支持 DMA
+
+<Frame>
+  <img src="/cn/images/intro3.png" alt="内核 DMA 保护检查" />
+</Frame>
+
+<Warning>
+如果内核 DMA 保护显示为**开启**，您需要在 BIOS 设置中禁用它。请注意，某些主板（如某些技嘉型号）无法禁用此功能，因此不支持 DMA。
+</Warning>
+
+---
+
+## 主计算机要求
+
+DMA 需要两台计算机才能运行。对于**游戏 PC**：
+
+#### 台式机要求
+- 可用的 PCIe 插槽（x16、x4 或 x1）
+- 如果插槽被 GPU 挡住，需要 PCIe 延长线
+- 足够的性能以流畅运行游戏
+
+#### 笔记本电脑要求（不推荐）
+必须具有以下之一：
+- 额外的 M.2 插槽（用于 M.2 转 PCIe 转换器）
+- 额外的 M.2 插槽（用于 M.2 版本 DMA）
+- Thunderbolt 3 端口（用于 Thunderbolt 转 PCIe 转换器）
+
+<Note>
+使用 M.2 转换时可能需要外部电源为 DMA 供电
+</Note>
+
+## 第二台计算机要求
+
+第二台计算机可以是台式机或笔记本电脑，需要：
+
+**最低配置：**
+- CPU：Intel i5 第四代或更好
+- GPU：集成或独立显卡
+
+**推荐配置：**
+- CPU：Intel i5 第九代 / Ryzen 5600G 或更好
+- GPU：集成或独立显卡**（最低支持分辨率必须与游戏 PC 相同）**
+
+<Warning>
+对于 fuser 使用，第二台计算机的 CPU/GPU 必须支持与主屏幕分辨率相匹配的输出。请咨询我们的社区以获取兼容性指导。
+</Warning>

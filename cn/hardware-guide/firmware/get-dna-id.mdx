@@ -1,0 +1,86 @@
+---
+title: "获取 DMA 的 DNA ID"
+description: "获取 DMA 的 DNA ID 的说明"
+icon: 'star'
+---
+<Card title="DNA ID 工具" icon="scroll" href="https://alist.scarlet.technology/d/Tools/DNA_ID.zip?sign=vuf3WnCBzIxn6lB9pEeAf8n4A1mycZEHfnsIMCzrm_U=:0">
+用于获取 DMA 的 DNA ID 的脚本工具
+</Card>
+<Warning>
+    **提醒**  
+    - 在导出设备列表之前，请完全卸载开机自启动的反作弊软件。（Vanguard、Faceit、ACE、5E、完美等）
+    - 所有操作都在**第二台 PC**上进行。
+</Warning>
+---
+# 1. 将 DMA 的端口切换到 JTAG
+<Note>
+    最靠近金手指的端口是**JTAG**端口，而离它最远的是**DATA**端口。
+</Note>
+<Frame>
+      <img src="/cn/images/dna0.png" />
+</Frame>
+---
+# 2. 下载并安装 JTAG 驱动程序
+<Card title="固件工具包" icon="screwdriver-wrench" href="https://alist.scarlet.technology/d/Users/Tools/DMA_Flasher.zip">下载并将文件解压到一个文件夹中</Card>
+<Warning>
+    您的 DMA 要么是**I. RS232 DMA 驱动程序（LeetDMA、CaptainDMA、其他）**，要么是**II. CH347 DMA 驱动程序（ScartletDMA、CaptainDMA、PeeperDMA、Hackdma 和其他）**。
+
+如果您不知道是哪一个，请尝试两者。
+</Warning>
+
+### I. RS232 DMA 驱动程序（LeetDMA、CaptainDMA、其他）
+1. 下载上述工具并解压。打开 `Drivers` 文件夹 -> 运行 `zadiag.exe`
+2. 点击 `Options` -> `List All Devices`
+<Frame>
+      <img src="/cn/images/dna1.png" />
+    </Frame>
+3. 在 USB 设备中，选择 `Quad RS232-HS (Interface 0)`。
+<Warning>
+    您必须选择"Interface 0"，否则可能会导致 DMA 损坏。
+</Warning>
+<Note>
+    找不到设备？请仔细检查您的 DMA 是否已插入 JTAG 端口，或尝试[**CH347 DMA 烧录**](/cn/hardware-guide/firmware/get-dna-id#ii-ch347-driver-scartletdma%2C-captaindma%2C-peeperdma%2C-hackdma-and-others)
+</Note>
+<Frame>
+      <img src="/cn/images/dna2.png" />
+    </Frame>
+4. 按 `Replace Driver` 或 `Install Driver` 并等待驱动程序安装完成，安装可能需要长达 5 分钟。
+<Frame>
+      <img src="/cn/images/dna3.png" />
+    </Frame>
+    <Frame>
+      <img src="/cn/images/dna4.png" />
+    </Frame>
+    <Frame>
+      <img src="/cn/images/dna5.png" />
+</Frame>
+
+<Info> 成功后，关闭 zadiag 并进入下一步。</Info>
+
+---
+
+### II. CH347 驱动程序（ScartletDMA、CaptainDMA、PeeperDMA、Hackdma 和其他）
+1. 下载上述工具并解压。打开 `Drivers` 文件夹 -> 打开 `CH341PAR` -> 打开 `CH341PAR` -> 运行并安装 `SETUP.exe`
+<Note>
+    找不到设备？请仔细检查您的 DMA 是否已插入 JTAG 端口，或尝试[**RS232 DMA 烧录**](/cn/hardware-guide/firmware/get-dna-id#i-rs232-dma-driver-leetdma%2C-captaindma%2C-others)
+</Note>
+
+---
+
+# 3. 获取 DMA 的 DNA ID
+1. 根据您的 DMA 板类型（35T / 75T），运行相应的 .bat 文件
+<Note>
+    如果您不确定选择 `CH347` 还是 `RS232`，只需运行两者；其中一个会显示 ID。
+</Note>
+
+<Frame>
+      <img src="/cn/images/dna6.png" />
+</Frame>
+
+2. 正确的结果应该看起来像这样 ⬇️
+<Frame>
+      <img src="/cn/images/dna7.png" />
+</Frame>
+
+3. 复制 ID 并在您的工单中发送。之后标记 Scarletlab 以生成固件。
+

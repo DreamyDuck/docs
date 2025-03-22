@@ -1,0 +1,58 @@
+---
+title: "Moonlight"
+description: "使用 Moonlight 实现无需融合器的 ESP 透视的说明"
+icon: 'moon'
+---
+<CardGroup cols={2}>
+  <Card title="Sunshine [主 PC]" icon="microsoft">
+    在**主 PC**上下载并安装
+  </Card>
+  <Card title="Moonlight [第二台 PC]" icon="microsoft">
+    在**第二台 PC**上下载并安装
+  </Card>
+</CardGroup>
+---
+
+# Moonlight 设置
+1. 在**第二台 PC**上，打开 `Moonlight` -> 设置页面：
+    - 设置为**无边框窗口模式**
+    - 启用**垂直同步**
+2. 返回主页，点击列表中的桌面图标。
+3. 记住 4 位数的 PIN 码。
+4. 运行浏览器 -> 打开 `https://localhost:47990/` 页面。**（必须使用 Edge 浏览器）**
+5. 会弹出 `NET::ERR_CERT_AUTHORITY_INVALID` 错误，点击高级 -> 继续。
+6. 现在您将进入 Sunshine 设置页面。
+<Tip>
+    建议将所有信息设置为 1，方便记忆。
+</Tip>
+<Frame>
+      <img src="/cn/images/moonlight0.png" />
+    </Frame>
+
+7. 按照下图配置设置：
+<Frame>
+      <img src="/cn/images/moonlight1.png" />
+    </Frame>
+8. 点击保存后，转到 PIN 页面并填写您在步骤 3 中获得的 4 位数 PIN 码。点击发送。
+<Frame>
+      <img src="/cn/images/moonlight2.png" />
+    </Frame>
+9. 第二台 PC 上 Moonlight 的桌面图标不显示锁定表示已完成。
+<Tabs>
+  <Tab title="已解锁（完成）">
+    <Frame>
+      <img src="/cn/images/moonlight3.png" />
+    </Frame>
+  </Tab>
+  <Tab title="已锁定（未完成）">
+    <Frame>
+      <img src="/cn/images/moonlight4.png" />
+    </Frame>
+  </Tab>
+</Tabs>
+10. 点击桌面图标开始广播。
+---
+# 如何退出 Moonlight 广播
+<Check>
+    在**第二台 PC**键盘上同时按下 `Ctrl` + `Shift` + `Alt` + `Q` 退出 Moonlight 广播。
+</Check>
