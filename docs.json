@@ -104,8 +104,30 @@
                     "group": "Fuser",
                     "icon": "microchip",
                     "pages": [
-                      "en/hardware-guide/fuser/dichen-p1/dichen-p1",
-                      "en/hardware-guide/fuser/dichen-mini/dichen-mini"
+                      {
+                        "group": "Dichen 4/5/6",
+                        "icon": "angle-right",
+                        "pages": [
+                          "en/hardware-guide/fuser/dichen-4-5-6/setup"
+                        ]
+                      },
+                      {
+                        "group": "Dichen Mini",
+                        "icon": "angle-right",
+                        "pages": [
+                          "en/hardware-guide/fuser/dichen-mini/setup",
+                          "en/hardware-guide/fuser/dichen-mini/troubleshoot"
+                        ]
+                      },
+                      {
+                        "group": "Dichen P1",
+                        "icon": "angle-right",
+                        "pages": [
+                          "en/hardware-guide/fuser/dichen-p1/info",
+                          "en/hardware-guide/fuser/dichen-p1/setup",
+                          "en/hardware-guide/fuser/dichen-p1/firmware"
+                        ]
+                      }
                     ]
                   },
                   {

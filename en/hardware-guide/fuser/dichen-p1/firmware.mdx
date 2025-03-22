@@ -1,0 +1,54 @@
+---
+title: "Firmware Upgrade Manual"
+description: "Firmware Upgrade Manual for Dichen P1"
+icon: 'asterisk'
+---
+
+<Warning>
+    All upgrade processes should be done on the **Second PC (Cheat PC)**.
+</Warning>
+
+<Card icon="download" href="https://alist.scarlet.technology" title="4K Fuser Toolset">
+    Download & Extract the toolset for Dichen P1 [4k165] Fuser
+</Card>
+
+# Dichen P1 [4k@165] Firmware Upgrade Manual
+<Steps>
+    <Step title="Enter Upgrade Mode">
+        1. Ensure the fuser is connected to the power supply and USB-C interface.
+        2. Press the power button, and within one second after the red light turns on, press the button on the left of the front panel. The indicator will remain red, indicating the fuser is in firmware upgrade mode.
+        3. Verify the indicator light at the bottom left of the fuser remains red and you are now in `Firmware Upgrade Mode`.
+    </Step>
+    <Step title="Prepare the Software Package">
+        Obtain the required software package from the official designated channel to ensure safety and compatibility.
+    </Step>
+    <Step title="Connect and Start the Upgrade">
+        1. Connect the fuser to your computer via the USB interface with the prepared software package.
+        2. The fuser will automatically recognize and begin reading the upgrade data from the package.
+    </Step>
+    <Step title="During the Upgrade Process">
+        Do not disconnect the power supply or USB connection to avoid upgrade failure or potential damage to the fuser.
+        <Warning>
+            The upgrade process involves erasing the original program and may take approximately 10-30 minutes, depending on your computer's performance. Please be  patient.
+
+            If you encounter any anomalies or the upgrade takes unusually long (e.g., overnight), contact technical support for assistance.
+        </Warning>
+    </Step>
+    <Step title="Launch the Upgrade Software (FWUPG_v1.2)">
+        <Frame>
+      <img src="/en/images/4k3.png" />
+        </Frame>
+    </Step>
+    <Step title="Firmware Burning">
+        <Warning>
+            Install **CH340N** driver before proceeding with the upgrade!
+        </Warning>
+        1. **Select Port:** Choose `COM3` (or as displayed on your computer).
+        2. **Select File Type:** Choose `BIN` for the firmware file extension.
+        3. **Locate Firmware:** Click the `...` button at the top right to find the firmware file path.
+        4. **Open File:** Select and open the firmware file.
+        5. **Start Upgrade:** Click `Send`. The fuser's indicator light will turn green. Wait until the software indicates that the sending process is complete before turning off the fuser.
+    </Step>
+    <Step title="Congratulations! You have successfully upgraded your 4K fuser firmware.">
+    </Step>
+</Steps>
