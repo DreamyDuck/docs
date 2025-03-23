@@ -366,7 +366,7 @@
                     ]
                   },
                   {
-                    "group": "ESP无Fuser方案",
+                    "group": "ESP串流方案[无需融合器]",
                     "icon": "eye",
                     "pages": [
                       "cn/hardware-guide/esp/moonlight",
@@ -378,19 +378,19 @@
             ]
           },
           {
-            "tab": "无HWID和反作弊指南",
+            "tab": "无序机器码和过机器码指南",
             "groups": [
               {
                 "group": "开始使用",
                 "pages": ["cn/no-hwid-guide/introduction"]
               },
               {
-                "group": "无HWID指南",
+                "group": "无序机器码指南",
                 "icon": "angle-right",
                 "pages": ["cn/no-hwid-guide/no-hwid/setup"]
               },
               {
-                "group": "反作弊指南",
+                "group": "过机器码指南",
                 "icon": "angle-right",
                 "pages": ["cn/no-hwid-guide/spoofer/setup"]
               }
