@@ -72,6 +72,11 @@
                     "pages": ["en/product-manuals/dead-by-daylight/dbd"]
                   },
                   {
+                    "group": "Delta Force Guides",
+                    "icon": "user",
+                    "pages": ["en/product-manuals/delta-force/function-description", "en/product-manuals/delta-force/qna"]
+                  },
+                  {
                     "group": "PYBG Guides",
                     "icon": "user",
                     "pages": ["en/product-manuals/pubg/pubg"]
@@ -265,6 +270,11 @@
                     "group": "黎明杀机指南",
                     "icon": "user",
                     "pages": ["cn/product-manuals/dead-by-daylight/dbd"]
+                  },
+                  {
+                    "group": "三角洲行动指南",
+                    "icon": "user",
+                    "pages": ["cn/product-manuals/delta-force/function-description", "cn/product-manuals/delta-force/qna"]
                   },
                   {
                     "group": "绝地求生指南",
