@@ -1,0 +1,69 @@
+---
+title: "Windows PE Setup"
+description: "Setup and configuration guide for Windows PE"
+icon: '1'
+---
+<CardGroup cols={2}>
+  <Card title="Ventroy" icon="download" href="https://www.ventoy.net/en/download.html">
+    Official Ventroy Site
+  </Card>
+  <Card title="Hiren's BootCD PE x64" icon="download" href="https://www.hirensbootcd.org/files/HBCD_PE_x64.iso">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Card>
+  <Card title="Windows ISO" icon="windows" href="https://os.click/en">
+    Recommended windows version for DMA Main PC -> **Windows 10 22H2**
+  </Card>
+  <Card title="Fourth Card" icon="square-4">
+    Excepteur sint occaecat cupidatat non proident
+  </Card>
+</CardGroup>
+<Note>
+      - This step is recommended for all users who require completely clean,
+      trace-free windows
+      - This step require an USB storage drive with atleast
+      16GB and USB 3.0
+    </Note>
+<Steps>
+  <Step title="Plug in your USB Storage Drive">
+    > Make sure you don't have any important files inside.
+  </Step>
+  <Step title="Install Ventroy into your USBc Storage Drive">
+    1. Download **Ventroy** Installer from Official Site. (Link on top)
+    <Frame>
+    <img src="/en/images/win-pe0.png" />
+    <img src="/en/images/win-pe1.png" />
+    </Frame>
+    2. Unzip the downloaded zip file.
+    3. Open the folder and run `Ventroy2Disk.exe`.
+    4. Choose the plugged USB Storage Drive and Click `Install`.
+    5. After installation complete, unplug and plug in again the USB storage drive. **A new storage `Ventroy` will now appear as empty usb drive. This storage will be use to store all our needed files.**
+  </Step>
+  <Step title="Prepare all requires files">
+    <Warning>This step is important; you may lose internet connection in WinPE. Therefore, prepare all the required files on the USB.</Warning>
+    1. Download the **Windows ISO** and **All Files** in our Cloud Drive. (Link on top)
+    2. Place all the files into `Ventroy Storage (USB Storage)`.
+   </Step>
+   <Step title="Boot into Windows PE">
+        #### Method 1
+        > 1. Shutdown your PC and power on. During startup, press <kbd>F12</kbd> or <kbd>F12</kbd> or <kbd>F12</kbd> or <kbd>F12</kbd> or <kbd>F12</kbd> to access the boot menu.  
+        **(Different brands of motherboards have different trigger buttons, but pressing all the buttons together can activate them.)**
+        > 2. In the boot selection, choose the usb drive (ventroy)
+
+        #### Method 2
+        > 1. Press and holding <kbd>SHIFT</kbd> button and click restart. (Don't release the `SHIFT` button until it load into troubleshoot page)
+        > <Frame><img src="/en/images/win-pe2.png" /></Frame>
+        > 2. It will load into Blue Options Page.
+        > 3. Choose `Troubleshoot` -> `Advanced Optoins` -> `Startup Settings`. It will now help you boot into BIOS.
+        > 4. Find `Boot` option, choose the usb drive (ventroy) and boot into it.
+        <Warning>
+            If you encounter a prompt indicating that security is preventing booting from USB, please follow this video to disable Secure Boot. -> https://www.youtube.com/watch?v=Tr9RUo58--0
+        </Warning>
+        </Step>
+        <Step title="Select HBCD_PE.x64.iso in Ventory booting selection">
+        > 5. After successfully boot into Ventroy, choose the previous downloaded `HBCD_PE.x64.iso`.
+        > 6. It will now boot into the Windows PE system.
+        </Step>
+</Steps>
+All steps are completed. Please return to the Overall Guideline for the next step.
+<Card title="Return to Overall Guideline" color="ff0000" horizonal="true" href="/en/no-hwid-guide/no-hwid/overall-guide" icon="rotate-left">
+</Card>

@@ -1,0 +1,52 @@
+---
+title: "Overall Guideline"
+description: "Overall Instruction step by step"
+icon: "star"
+---
+
+<Steps>
+  <Step title="Record your HWID">
+    > Before starting anything, please record your HWID before spoofing.
+    1. Download `checkHWID.exe` and run as **ADMINISTRATOR**.
+    2. Take a picture using your phone or any storing method.
+  </Step>
+  <Step title="Setup Windows PE with Ventroy">
+    <Note>
+      - This step is recommended for all users who require completely clean,
+      trace-free windows
+      - This step require an USB storage drive with atleast
+      16GB and USB 3.0
+    </Note>
+    > ### Whats's Ventroy?
+    > Ventoy is an open-source tool that allows you to create a bootable USB drive for multiple ISO, WIM, IMG, VHD(x), and EFI files without repeatedly formatting the drive. **We will use Ventroy to boot into WinPE iso to achieve max compatible.**
+
+    > ### What's Windows PE?
+    > Windows PE (WinPE) is a minimal version of the Windows operating system used for tasks like deploying, installing, and repairing Windows installations. **No-HWID disk drive setup will be complete in the WinPE.**
+    <Card title="Goto Windows PE Setup" color="ff0000" href="/en/no-hwid-guide/no-hwid/windows-pe-setup" icon="arrow-right"></Card>
+  </Step>
+  <Step title="Spoof Disk Drive">
+    <Warning>
+        - Skip this step if you don't have **No-HWID Disk Drive**
+        - Before you go into this step, make sure you have backed up your important data. This step will reset your hard drive.
+    </Warning>
+    > ### What's the difference in comparison to Permanent Spoofer?
+    > Compared with using Raid 0, software and other modifications, our No-HWID is to directly modify the control of the main control at the lowest level. Compared to Raid 0, etc., it is more completely modified and completely impossible to detect.
+    <Card title="Goto Disk Spoof" color="ff0000" href="/en/no-hwid-guide/no-hwid/disk-spoof" icon="arrow-right"></Card>
+  </Step>
+  <Step title="Windows Installation">
+    <Warning>
+        Recommended System **Windows 10 22H2**. (Latest Windows Patch contains kernel patch, will causing key recognization error)
+            - Recommended to disable windows update Permanently.
+    </Warning>
+    <Card title="Goto Windows Setup" color="ff0000" href="/en/no-hwid-guide/no-hwid/windows-setup" icon="arrow-right"></Card>
+  </Step>
+  <Step title="Spoof Motherboard Serials">
+    These are instructions or content that only pertain to the third step.
+    <Card title="Goto Motherboard Spoof" color="ff0000" href="/en/no-hwid-guide/no-hwid/motherboard-spoof" icon="arrow-right"></Card>
+  </Step>
+  <Step title="Spoof Network (IP & MAC Address)">
+    These are instructions or content that only pertain to the third step.
+    <Card title="Goto Network Spoof (IP & MAC)" color="ff0000" href="/en/no-hwid-guide/no-hwid/windows-pe-setup" icon="arrow-right"></Card>
+  </Step>
+</Steps>
+

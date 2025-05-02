@@ -163,21 +163,6 @@
                     ]
                   },
                   {
-                    "group": "Firmware",
-                    "icon": "file",
-                    "pages": [
-                      "en/hardware-guide/firmware/get-dna-id",
-                      {
-                        "group": "Firmware Burning Manual",
-                        "icon": "angle-right",
-                        "pages": [
-                          "en/hardware-guide/firmware/burning-manual/ch347",
-                          "en/hardware-guide/firmware/burning-manual/rs232"
-                        ]
-                      }
-                    ]
-                  },
-                  {
                     "group": "ESP w/o Fuser", 
                     "icon": "eye",
                     "pages": [
@@ -186,6 +171,31 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "tab": "Firmware Guides",
+            "groups": [
+              {
+                "group": "🅵🆁🅴🅴 Open Source Firmware [Scarlet × Beater.Solutions]",
+                "pages": ["en/firmware-guide/open-source/card-reader", "en/firmware-guide/open-source/nic", "en/firmware-guide/open-source/pcie-bridge", "en/firmware-guide/open-source/sata", "en/firmware-guide/open-source/usb", "en/firmware-guide/open-source/vmd-nvme"]
+              },
+              {
+                "group": "HOW TO",
+                "icon": "angle-right",
+                "pages": ["en/firmware-guide/how-to/firmware-flashing-auto", 
+                {
+                  "group": "Flash Firmware [Manually]",
+                  "icon": "hand",
+                  "pages": ["en/firmware-guide/how-to/manual-get-dna-id", "en/firmware-guide/how-to/manual-ch347", "en/firmware-guide/how-to/manual-rs232"]
+                }
+                , "en/firmware-guide/how-to/troubleshoot"]
+              },
+              {
+                "group": "Ditto Firmware",
+                "icon": "angle-right",
+                "pages": ["en/firmware-guide/ditto-fw/introduction", "en/firmware-guide/ditto-fw/installation", "en/firmware-guide/ditto-fw/troubleshoot"]
               }
             ]
           },
@@ -199,7 +209,7 @@
               {
                 "group": "No-HWID Guides",
                 "icon": "angle-right",
-                "pages": ["en/no-hwid-guide/no-hwid/setup"]
+                "pages": ["en/no-hwid-guide/no-hwid/overall-guide", "en/no-hwid-guide/no-hwid/windows-pe-setup", "en/no-hwid-guide/no-hwid/disk-spoof", "en/no-hwid-guide/no-hwid/windows-setup", "en/no-hwid-guide/no-hwid/motherboard-spoof", "en/no-hwid-guide/no-hwid/network-spoof"]
               },
               {
                 "group": "Spoofer Guides",

@@ -1,0 +1,66 @@
+---
+title: "Windows Setup"
+description: "Setup and configuration guide for Clean Windows"
+icon: '3'
+---
+<Note>You should now inside the Windows PE system.</Note>
+<Steps>
+  <Step title="Run & Install via Windows Installer ISO">
+    1. Opem `File Explorer`.
+    2. Go into `USB Storage (Ventroy)` -> Double-click to open the downloaded Windows ISO.
+    3. Double-click and run `setup.exe` inside of the Windows ISO.
+    4. Choose your preferred language, timezone, input and click `Next` -> Tick and Accept Terms -> Go Next
+    <Frame><img src="/en/images/windows-setup0.png" /></Frame>
+    5. Choose `Custom: Install Windows only (Advanced)`
+    <Frame><img src="/en/images/windows-setup1.png" /></Frame>
+    6. There should only 1 disk option available for No-HWID ssd. Choose it and click `Next`.
+    <Frame><img src="/en/images/windows-setup2.png" /></Frame>
+    7. Wait until the installation windows complete.
+    <Frame><img src="/en/images/windows-setup3.png" /></Frame>
+    <Warning>
+      If the No-HWID hard drive is not displayed properly when you select the hard disk. Follow this step:
+      1. Click `Load Driver`.
+      2. Browse to `USB Storage (Ventory)` -> `No-HWID Toolkit` -> `No-HWID SSD Driver` -> Click `OK`.
+      3. The hard drive should now display correctly.
+    </Warning>
+  </Step>
+  <Step title="Boot into Windows">
+    1. After the Windows Installation completed. Everything is now done in Windows PE side.
+    2. Shutdown from Windows PE system and unplug the USB Storage Drive.
+    3. Power ON PC. You should now able to boot into the new clean windows.
+    4. Setup the windows name, password and get into the windows.
+  </Step>
+  <Step title=" Plug in again USB Storage (Ventroy)">
+
+  </Step>
+  <Step title="Install all required Driver & Basic Runtime">
+    <CardGroup cols={2}>
+    <Card title="VC Runtime All in One Pack" icon="download" href="https://www.ventoy.net/en/download.html">
+      Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+    </Card>
+    <Card title="DirectX Runtime" icon="download" href="https://www.hirensbootcd.org/files/HBCD_PE_x64.iso">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </Card>
+  </CardGroup>
+    ### No-HWID Disk Driver
+    1. Open `USB Storage (Ventroy)` -> `M.2 SSD Driver` Folder.
+    2. Right click `Install Me.inf` and choose `Install` from the menu selection.
+    3. Done.
+
+    ### No-HWID Network LAN
+    1. Open `USB Storage (Ventroy)` -> `Network LAN Driver` Folder.
+    2. Right click `Install Me.inf` and choose `Install` from the menu selection.
+    3. Done.
+
+    </Step>
+  <Step title="Check HWID Serials">
+  1. Open `USB Storage (Ventroy)` -> Run `checkHWID` as **ADMINISTRATOR**.
+  2. Compare the HWID with the image you take on **Overall Step 1**.
+  3. **Disk Serial Number** and **UUID** should now difference compare to old HIWD.
+</Step>
+  <Step title="All step is now completed. You can now close the software.">
+  </Step>
+</Steps>
+All steps are completed. Please return to the Overall Guideline for the next step.
+<Card title="Return to Overall Guideline" color="ff0000" horizonal="true" href="/en/no-hwid-guide/no-hwid/overall-guide" icon="rotate-left">
+</Card>

@@ -1,0 +1,69 @@
+---
+title: "VMD NVMe"
+description: "NVMe emulation through Intel's Virtual RAID on CPU (VMD)"
+icon: 'hard-drive'
+---
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Github Repo" icon="github" href="https://scarlet.technology">
+      Scarlet.Technology Official Site
+  </Card>
+  <Card title="Customization Guide" icon="code">
+    How to Customization from Open Source
+  </Card>
+  <Card title="Download Pre-Build" icon="download">
+    Download Pre-build Firmware (Shared)
+  </Card>
+  <Card title="Flash the Firmware" icon="bolt-lightning">
+    Navigate to Firmware Flashing Guide
+  </Card>
+</CardGroup>
+<Warning>
+    **<u>Important Reminder</u>** 
+    * All firmware and open source are intended for research purposes only.  
+    * We do not take responsibility for account bans or provide any support; please do not contact `Scarlet Technology` or `Beater Solutions` for help regarding open source/free firmware.  
+    * All pre-built firmware is shared and will be replaced periodically.
+</Warning>
+<Note>**<u>Supported Anticheats</u>**  
+All Anticheats</Note>
+
+# Firmware VMD NVMe
+
+Firmware VMD NVMe fully emulates a genuine NVMe drive behind Intel's Virtual RAID on CPU (VMD). By running under VMD, the system and anti-cheat solutions see only the Intel VMD controller, never enumerating the actual NVMe device. This firmware includes a 1:1 CFG space dump, proper Base Address Register (BAR) support, and NVMe driver compatibility, ensuring minimal detection risk and seamless integration—just like a real device.
+
+## Requirements
+<Warning>This firmware device has high configuration requirements for the **Main PC**. Please ensure you meet the following requirements to avoid various bugs (such as blue screens, slow startup, etc.).</Warning>
+* Intel CPU (11th Generation or newer)
+* Intel VMD (Virtual RAID on CPU) must be **enabled** in `BIOS`
+* Specific Intel drivers must be installed on Windows
+* A Windows reinstall may be required for proper driver initialization and device recognition
+
+## Features
+
+### - 100% CFG
+Your firmware's configuration space will exactly match that of a legitimate device, ensuring seamless integration and CFG detection as an authentic device.
+
+### - BAR Support
+BAR (Base Address Register) is the memory data inside the PCIe device. The BIOS retrieves this information to interact with the device correctly.
+
+### - Emulation
+Proper BAR response ensures that when the driver sends a message to the PCIe device's BAR, the BAR responds with the appropriate data, mimicking real device behavior.
+
+## Compatibility
+
+### - DRV Scan
+Green on DRVScan Tool.
+
+### - Anti-Cheats Supported
+Supports ALL anti-cheats.
+
+## Access
+
+### - Unzip Password
+`beater.solutions`
+
+---
+
+*With thanks to authors@AbigailForeigner*

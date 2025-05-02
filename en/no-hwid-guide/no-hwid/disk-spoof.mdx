@@ -1,0 +1,33 @@
+---
+title: "Disk Spoof"
+description: "Setup and configuration guide for No-HWID Disk Drive"
+icon: '2'
+---
+<Note>You should now inside the Windows PE system.</Note>
+<Warning>Make sure you backup all important files before process any of these steps. This step will fully format all files.</Warning>
+<Steps>
+  <Step title="Format your No-HWID disk with DiskGenius">
+    1. Run `DiskGenius.exe`.
+    2. Right-click the no-hwid disk drive -> `Delete All Partitions` -> `OK` -> `Save All`.
+    <Frame><img src="/en/images/disk-spoof0.png" /></Frame><Frame><img src="/en/images/disk-spoof1.png" /></Frame>
+  </Step>
+  <Step title="Change serials of your disk drive">
+    1. Unzip the `No-HWID Toolkit` zip file.
+    2. Goto into unzipped `No HWID Toolkit` -> `M.2 Editor [3.0]` -> Run `SSDToolKits.exe` as **ADMINISTRATOR**.
+    3. The device should be automatically selected in the top bar. If the wrong device is selected, manually choose the correct one.
+    <Frame><img src="/en/images/disk-spoof2.png" /></Frame>
+    4. Goto `Update Info` tab.
+    5. Fill all the highlighted in image.
+    <Frame><img src="/en/images/disk-spoof3.png" /></Frame>
+    > **Model Name** - Random Fill 5 CAPS Alphabet  
+    > **Work Order** - Same as Model Name  
+    > **Dut0 SN** - Random 2 CAPS Alphabet + YYYYMMDD(Date) + HHMM(TIME)
+    6. Click `Update`.
+    7. If everything runs correctly, the `Result` should now display as **PASS**.
+  </Step>
+  <Step title="All step is now completed. You can now close the software.">
+  </Step>
+</Steps>
+All steps are completed. Please return to the Overall Guideline for the next step.
+<Card title="Return to Overall Guideline" color="ff0000" horizonal="true" href="/en/no-hwid-guide/no-hwid/overall-guide" icon="rotate-left">
+</Card>
