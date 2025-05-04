@@ -195,7 +195,7 @@
               {
                 "group": "Ditto Firmware",
                 "icon": "angle-right",
-                "pages": ["en/firmware-guide/ditto-fw/introduction", "en/firmware-guide/ditto-fw/installation", "en/firmware-guide/ditto-fw/troubleshoot"]
+                "pages": ["en/firmware-guide/ditto-fw/introduction", "en/firmware-guide/ditto-fw/initial-setup", "en/firmware-guide/ditto-fw/how-to-use", "en/firmware-guide/ditto-fw/troubleshoot"]
               }
             ]
           },

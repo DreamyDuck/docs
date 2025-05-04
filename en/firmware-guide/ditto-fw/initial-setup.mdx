@@ -1,0 +1,44 @@
+---
+title: "Initial Setup"
+description: "Initial setup for Ditto Firmware first time user"
+icon: 'angle-right'
+---
+
+---
+
+## Main PC
+### Disable following options
+- PCIe Native Power Management -> Disable
+- XHCI Toggle -> Enable
+- MSI Fast Start -> Disable
+- Fast Boot -> Disable
+- Local ASPM -> Disable
+<Note>
+If some motherboards don't have these features, they can be ignored
+</Note>
+
+### Use our Custom PowerCFG
+1. Run `Powershell` as **ADMINISTRATOR**.
+2. Paste, Run following command and hit `Enter`.
+```
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+```
+3. In windows search, search `powercfg.cpl` and open it.
+4. Choose   `Excellent` Plan.
+
+---
+
+## Second PC
+### Required Runtime
+<CardGroup cols={2}>
+  <Card title="WebView2" icon="download" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2">
+    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+  </Card>
+  <Card title="VC Runtime" icon="download" href="https://www.hirensbootcd.org/files/HBCD_PE_x64.iso">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Card>
+  <Card title="DirectX Runtime" icon="windows" href="https://os.click/en">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+  </Card>
+</CardGroup>
+> Install all runtime above.
