@@ -3,3 +3,61 @@ title: "Network Spoof (IP & MAC)"
 description: "Setup and configuration guide for No-HWID Hardware"
 icon: '5'
 ---
+
+<Steps titleSize="h2">
+  <Step title="Generate random Mac Address">
+    1. Goto `No-HWID Toolkit` -> `Network LAN` -> Double-click and run `mac_address_generator.bat`.
+    2. From the generate listing, random pick one of it and copy into clipboard.
+    <Frame><img src="/en/images/network-spoof0.png" /></Frame>
+    </Step>
+  <Step title="Run No-HWID Network Editor">
+  <Warning>If it says **"Device Unplugged"**, check that you're plugging in the No-HWID Network Adapter correctly.</Warning>
+    1. Goto `No-HWID Toolkit` -> `Network LAN` -> Run `editor.exe` as **ADMINISTRATOR**.
+    2. Follow the image below:
+    <Frame><img src="/en/images/network-spoof1.png" /></Frame>
+    > ① Paste your copied mac address that generated at **Step 1**.  
+    > ② Click `Program`.  
+    3. Wait around `10 seconds`.
+    4. Unplug the `No-HWID network adapter` and plug in again.
+    5. Wait a while and the spoof should be complete. A green circle appear in `Result` mean its successfully.
+   </Step>
+   <Step title="Disable IPv6">
+   <Note>Repeat this steps to turn off IPv6 for each device in Network Connections.</Note>
+   1. Goto `Control Panel` -> `Network and Internet` -> `Network Connection`.
+   <Frame><img src="/en/images/network-spoof2.png" /></Frame>
+   2. Right-clicl -> `Properties`.
+   3. Unticl `IPv6` and click `OK`.
+   <Frame><img src="/en/images/network-spoof3.png" /></Frame>
+   </Step>
+   <Step title="Disable unuse network devices">
+   <Note>Disable all unuse devices in `Network Connections`. **Except No-HWID network cards.**</Note>
+   1. Right-click the device -> `Disable` to disable the device.
+   2. Repeat this step for all unuse network device except the No-HWID network card.
+   3. Disabled device should looks like this:
+   <Frame><img src="/en/images/network-spoof4.png" /></Frame>
+   </Step>
+   <Step title="Change Public IP">
+   ### Method 1
+   <Warning>This step is only suitable for users with Dynamic IPs, please ask your ISP provider if it is supported.</Warning>
+   1. Power off your router & modem.
+   2. Wait **30 seconds** and power on back.
+   3. Your public IP should now auto changed.
+
+   ### Method 2 (Recommended)
+   Use VPN. Recommended NordVPN, ExpressVPN, Surfshark VPN.
+
+   </Step>
+   <Step title="Check `device manager` and disable all device that contains `WAN`">
+   1. Open `Device Manaer` -> Goto `Network Adapter` and Expand the list.
+   2. Find netwrok adapter that contains `WAN` in the name.
+   <Frame><img src="/en/images/network-spoof5.png" /></Frame>
+   3. Disable it by right-click -> `Disable Device`.
+   4. Repeat this disable actions to all device that contains `WAN` in name.
+    <Note>Skip this step if you don't have any device network adapter that contains `WAN` in name.</Note>
+   </Step>
+  <Step title="All step is now completed. You can now close the software.">
+  </Step>
+</Steps>
+All steps are completed. Please return to the Overall Guideline for the next step.
+<Card title="Return to Overall Guideline" color="ff0000" horizonal="true" href="/en/no-hwid-guide/no-hwid/overall-guide" icon="rotate-left">
+</Card>
