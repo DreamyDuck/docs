@@ -5,3 +5,48 @@ icon: 'star'
 ---
 
 ---
+<Warning>
+    Please plug the type-C data cable into <Tooltip tip="Nearest port to gold finger connector, used to firmware flashing and data update">JTAG port</Tooltip> and not the <Tooltip tip="Furtherest port to gold finger connector">Data port</Tooltip> of your DMA board (if there is only one, it means your interface is either a two-in-one or does not support JTAG). The end of the data cable is connected to the 2PC (Radar PC).
+</Warning>
+<Warning>
+    If you are using DMA for Valorant/Faceit. Make sure your `VALORANT` and `VANGUARD` both are not installed!! Uninstall both before inserting your DMA into your pc / firmware burning.
+</Warning>
+<Note>
+    Make sure both PC have all VC runtime environments installed.
+</Note>
+
+## Function
+Very simple all-in-one DMA tool. It includes: 
+- Driver
+- Firmware Flashing
+- DNA ID Fetcher
+- DMA Speed Test
+
+## Preview
+<Frame><img src="https://files.catbox.moe/eq8bzl.gif" /></Frame>
+
+## How to use
+### Driver Installation (MUST)
+1. Choose your device type from `Port Type`.
+2. Click `Install Driver`.
+
+### Fetch DNA ID
+1. Simply press `R232 Read` or `CH347 Read` to fetch the DNA ID.
+
+### Firmware Flashing
+1. Simply pick your `Port Type` and `FPGA Model`.
+2. Click `Select File` and select the firmware you want to flash.
+3. Click `Start Flashing` and wait until the Flashing Status change to **"Firmware Flashing Successfull"**.
+
+### 
+
+## Technology Stack
+- Electron
+- JavaScript
+- TailwindCSS
+- HTML/CSS
+
+<Note>
+Credit: [Ufrisk](https://github.com/ufrisk/pcileech) - Original Creator of PciLeech  
+Credit: [Kilmu1337](https://github.com/kilmu1337/DMA-Flash-Tools) - Backend Script
+</Note>

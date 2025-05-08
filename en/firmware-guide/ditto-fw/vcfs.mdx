@@ -1,0 +1,27 @@
+---
+title: "VCFS"
+description: "Introduction to VCFS (Virtual Configuration Space)"
+icon: 'angle-right'
+---
+---
+Virtual Configuration Space (VCFS) is a software implementation that enables the emulation and manipulation of PCI Express (PCIe) configuration space. Unlike traditional PCI configuration mechanisms that may have hardware-imposed limitations, VCFS provides a fully virtualized environment where users have complete control to view and modify all aspects of the PCIe configuration.
+
+## Overview
+PCIe devices expose their capabilities, settings, and control interfaces through a standardized configuration space - a memory area with predefined register layouts. VCFS creates a software representation of this configuration space, allowing for:
+- Inspection of the complete configuration hierarchy
+- Modification of any configuration register value
+- Creation of custom device configurations that may not exist in physical hardware
+- Testing and development without physical PCIe devices
+
+
+## Features
+- Complete Editability: All configuration registers can be viewed and modified, including typically read-only fields in physical hardware
+- Flexible Configuration: Create custom device profiles with specific capabilities, BARs, and other attributes
+- Runtime Modification: Change device characteristics on the fly without physical constraints
+- Debugging Tools: Inspect and understand configuration space layout and register purposes
+- Configuration Snapshots: Save and restore complete device configurations
+
+## Implementation
+VCFS provides a programmatic interface to create, modify, and interact with PCIe configuration space. It handles the complexities of PCI Express specifications while giving users direct access to the underlying configuration structures.
+
+The crate can be used as a standalone tool for PCIe configuration exploration, or integrated into larger virtualization or emulation systems that need to present PCIe devices to guest operating systems or applications.

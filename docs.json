@@ -2,6 +2,10 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Scarlet Docs",
+  "fonts": {
+    "family": "Open Sans",
+    "weight": 600
+  },
   "colors": {
     "primary": "#FF2400",
     "light": "#FF6B5B",
@@ -195,7 +199,14 @@
               {
                 "group": "Ditto Firmware",
                 "icon": "angle-right",
-                "pages": ["en/firmware-guide/ditto-fw/introduction", "en/firmware-guide/ditto-fw/initial-setup", "en/firmware-guide/ditto-fw/how-to-use", "en/firmware-guide/ditto-fw/troubleshoot"]
+                "pages": ["en/firmware-guide/ditto-fw/introduction",
+                  {
+                    "group": "Components",
+                    "icon": "star",
+                    "pages": ["en/firmware-guide/ditto-fw/vcfs", "en/firmware-guide/ditto-fw/vdh"]
+                  },
+
+                 "en/firmware-guide/ditto-fw/initial-setup", "en/firmware-guide/ditto-fw/how-to-use", "en/firmware-guide/ditto-fw/troubleshoot"]
               }
             ]
           },
