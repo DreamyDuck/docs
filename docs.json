@@ -437,7 +437,7 @@
   },
   "seo": {
     "metatags": {
-      "og:image": "/en/images/seo0.png"
+      "og:image": "https://raw.githubusercontent.com/DreamyDuck/docs/refs/heads/main/en/images/seo0.png"
     }
   },
   "navbar": {
