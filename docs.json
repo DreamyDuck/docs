@@ -435,6 +435,11 @@
     "light": "/logo/all.svg",
     "dark": "/logo/all.svg"
   },
+  "seo": {
+    "metatags": {
+      "og:image": "/en/images/seo0.png"
+    }
+  },
   "navbar": {
     "links": [
       {
