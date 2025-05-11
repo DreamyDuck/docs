@@ -12,11 +12,6 @@
     "dark": "#CC1D00"
   },
   "favicon": "/favicon.svg",
-  "seo": {
-    "metatags": {
-      "og:image": "https://files.catbox.moe/itx6xy.png"
-    }
-  },
   "navigation": {
     "languages": [
       {
@@ -462,6 +457,11 @@
       "discord": "https://discord.scarlet.technology/",
       "github": "https://github.com/",
       "twitter": "https://twitter.com/"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "og:image": "https://files.catbox.moe/itx6xy.png"
     }
   }
 }
