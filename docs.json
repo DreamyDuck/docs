@@ -12,6 +12,11 @@
     "dark": "#CC1D00"
   },
   "favicon": "/favicon.svg",
+  "seo": {
+    "metatags": {
+      "og:image": "https://files.catbox.moe/itx6xy.png"
+    }
+  },
   "navigation": {
     "languages": [
       {
@@ -434,11 +439,6 @@
   "logo": {
     "light": "/logo/all.svg",
     "dark": "/logo/all.svg"
-  },
-  "seo": {
-    "metatags": {
-      "og:image": "https://files.catbox.moe/itx6xy.png"
-    }
   },
   "navbar": {
     "links": [
