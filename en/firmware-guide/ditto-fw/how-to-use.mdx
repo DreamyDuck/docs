@@ -7,7 +7,7 @@ icon: 'angle-right'
 
 <CardGroup cols={2}>
   <Card title="Ditto Firmware Activator" icon="download" href="https://alist.scarlet.technology/Users/Ditto%20Firmware">
-    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+    For zDMA users, kindly download the Activator name with `zDMA ONLY`
   </Card>
 </CardGroup>
 <Note>
@@ -30,4 +30,45 @@ Please complete [Initial Setup](/en/firmware-guide/ditto-fw/initial-setup) befor
 <img src="/en/images/ditto-fw2.png" />
 <Note>Your first login, the subscription duration may be unusual. Log out again and log in again to solve the problem.</Note>
 
+---
+
 ## How to custom your xHCI
+
+---
+
+---
+
+## Activate Firmware
+<Warning>
+1. The firmware must be activated on the **Second PC** when the computer is turned on; **otherwise, the Main PC will not load the system properly or boot up.**  
+2. Activation is required everytime Main PC is powering ON.  
+3. Make sure your **Main PC** is powered OFF.
+</Warning>
+1. After setting up your desired device in detail, sub-device information, etc. in Ditto, go to the `Settings` page.
+2. Powering on your **Main PC**. (immediately proceed to the next step)
+3. After the Main PC is powered on, wait for about 5 seconds, and then click `Connect` on the Second PC. (Start counting from power on, not after entering the windows).
+4. If activation is successful, it will load Windows normally. If it fails, the screen will remain black and you will not be able to access the Windows system.
+<Note>
+If you don't want to use Ditto Subscription after it expires, you can use this method:  
+- Switch to the JTAG interface, after the Main PC is powered on and energized, Second PC burn the DMA firmware in the normal way. after completion, the Main PC completes a power-off reboot, and then it can start normally.
+</Note>
+
+
+
+### Better Activation Timing?
+
+#### For FTDI Devices
+1. Open `Device Manager` alongside the Ditto application.,
+2. Expand the `Universal Serial Bus controllers` or the `Universal Serial Bus devices` section.
+3. When you see `FTDI FT601 USB 3.0 Bridge Device` or the `FTDI SuperSpeed-FIFO Bridge` appear, wait 5 seconds, then hit “Connect” in Ditto.
+
+#### For ZDMA Users
+1. Open `Device Manager` alongside the Ditto application.
+2. Expand the `Memory Technology Devices` section.
+3. When you see `LeechDMA` appear, wait 5 seconds, then click `Connect` in Ditto.
+
+#### For Ferrum Users
+1. If you're using a Ferrum, just wait until your mouse shows up under the `Boards` category, then hit `Connect` in Ditto.
+
+This timing trick should completely eliminate your connection headaches.
+

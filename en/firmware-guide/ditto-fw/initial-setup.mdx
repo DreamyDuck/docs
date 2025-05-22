@@ -78,7 +78,14 @@ powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 </CardGroup>
 
 ### Which Firmware Type to download?
-- RS232 DMA Board -> Choose download `Squirrel`
-- CH347 DMA Board -> Choose download `Enigma_X1`
-- 100T DMA Board -> Choose download `100T`
-- M.2 DMA Board -> Choose download `M2`
+<Note>
+  Activator Naming Logic: `[Activator] Ditto` + `Build Number` + `Version.exe`  
+  Example: `[Activator] Ditto_030Preview15.exe` == <strong>Ditto Version 0.3.0 Preview 15</strong>   
+    
+  Firmware Naming Logic:  `[Firmware] ` + `Build Number` + `Version` + `Board Type`  
+  Example: `[Firmware] 030Preview11_35T.bin` == <strong>35T Firmware Version 0.3.0 Preview 15</strong>   
+</Note>
+- 35T DMA Board -> Choose download firmware with `35T` / `squirrel_top`
+- 75T DMA Board -> Choose download firmware with `75T` / `x1_top`
+- 100T DMA Board -> Choose download `100T`/`zDMA`
+- M.2 DMA Board -> Choose download `M2` / `m2_top`
