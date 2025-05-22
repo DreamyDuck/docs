@@ -1,0 +1,124 @@
+export const HexToDecimalConverter = () => {
+  const [hexValue, setHexValue] = useState('FF')
+  const [decimalValue, setDecimalValue] = useState(255)
+  const [isValidHex, setIsValidHex] = useState(true)
+
+  useEffect(() => {
+    // Validate and convert hex to decimal
+    const cleanHex = hexValue.replace(/[^0-9A-Fa-f]/g, '')
+    if (cleanHex.length === 0) {
+      setDecimalValue(0)
+      setIsValidHex(true)
+      return
+    }
+    
+    if (/^[0-9A-Fa-f]+$/.test(cleanHex)) {
+      const decimal = parseInt(cleanHex, 16)
+      setDecimalValue(decimal)
+      setIsValidHex(true)
+    } else {
+      setIsValidHex(false)
+    }
+  }, [hexValue])
+
+  const handleHexChange = (e) => {
+    const value = e.target.value.toUpperCase()
+    setHexValue(value)
+  }
+
+  const handleDecimalChange = (e) => {
+    const decimal = parseInt(e.target.value)
+    if (!isNaN(decimal) && decimal >= 0) {
+      setDecimalValue(decimal)
+      setHexValue(decimal.toString(16).toUpperCase())
+      setIsValidHex(true)
+    }
+  }
+
+  const copyToClipboard = (value, type) => {
+    navigator.clipboard
+      .writeText(value.toString())
+      .then(() => {
+        console.log(`Copied ${type}: ${value} to clipboard!`)
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err)
+      })
+  }
+
+  return (
+    <div className="p-4 border dark:border-zinc-950/80 rounded-xl not-prose">
+      <div className="space-y-4">
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm text-zinc-950/70 dark:text-white/70 mb-2">
+              Hexadecimal Value
+            </label>
+            <div className="flex">
+              <span className="inline-flex items-center px-3 text-sm text-zinc-950/70 dark:text-white/70 bg-zinc-100 dark:bg-zinc-800 border border-r-0 border-zinc-300 dark:border-zinc-600 rounded-l-md">
+                0x
+              </span>
+              <input
+                type="text"
+                value={hexValue}
+                onChange={handleHexChange}
+                placeholder="FF"
+                className={`flex-1 px-3 py-2 border ${
+                  isValidHex
+                    ? 'border-zinc-300 dark:border-zinc-600'
+                    : 'border-red-500 dark:border-red-400'
+                } rounded-r-md bg-white dark:bg-zinc-900 text-zinc-950 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              />
+              <button
+                onClick={() => copyToClipboard(`0x${hexValue}`, 'hex')}
+                className="ml-2 px-3 py-2 text-sm bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors"
+                title="Copy hex value"
+              >
+                Copy
+              </button>
+            </div>
+            {!isValidHex && (
+              <p className="text-sm text-red-500 dark:text-red-400 mt-1">
+                Invalid hexadecimal value
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label className="block text-sm text-zinc-950/70 dark:text-white/70 mb-2">
+              Decimal Value
+            </label>
+            <div className="flex">
+              <input
+                type="number"
+                value={decimalValue}
+                onChange={handleDecimalChange}
+                min="0"
+                className="flex-1 px-3 py-2 border border-zinc-300 dark:border-zinc-600 rounded-l-md bg-white dark:bg-zinc-900 text-zinc-950 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                onClick={() => copyToClipboard(decimalValue, 'decimal')}
+                className="px-3 py-2 text-sm bg-green-500 hover:bg-green-600 text-white rounded-r-md transition-colors"
+                title="Copy decimal value"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg">
+          <div className="text-sm font-mono text-zinc-950/70 dark:text-white/70 space-y-1">
+            <p>Hex: 0x{hexValue}</p>
+            <p>Decimal: {decimalValue}</p>
+            {isValidHex && hexValue && (
+              <p className="text-xs">
+                Binary: {decimalValue.toString(2).padStart(8, '0')}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
