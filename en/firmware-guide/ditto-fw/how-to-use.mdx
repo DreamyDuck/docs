@@ -72,6 +72,22 @@ If you don't want to use Ditto Subscription after it expires, you can use this m
 
 This timing trick should completely eliminate your connection headaches.
 
-import { HexToDecimalConverter } from "/snippets/hex-to-decimal-en.mdx"
-
-<HexToDecimalConverter />
+<div class="quantum-container">
+  <div class="cosmic-converter-shell">
+    <h1 class="stellar-title">HEX → DEC</h1>
+    <p class="nebula-subtitle">Hexadecimal to Decimal Converter</p>
+    <div class="interstellar-input-group">
+      <label for="hexInput" class="galactic-label">Enter Hexadecimal Value:</label>
+      <input type="text" id="hexInput" class="wormhole-input" placeholder="e.g., FF, 1A2B, CAFE" maxlength="8">
+      <div class="error-message" id="errorMsg">Invalid hexadecimal value! Use only 0-9 and A-F.</div>
+    </div>
+    <button class="hyperspace-button" onclick="convertHexToDec()"> Convert to Decimal </button>
+    <div class="dimension-result-zone" id="resultZone">
+      <div class="cosmic-result-text placeholder-text"> Result will appear here... </div>
+    </div>
+    <div class="quantum-info-panel">
+      <div class="info-title">How it works:</div>
+      <div class="info-text"> Enter a hexadecimal number (base 16) using digits 0-9 and letters A-F. The converter will transform it into its decimal (base 10) equivalent. </div>
+    </div>
+  </div>
+</div>
