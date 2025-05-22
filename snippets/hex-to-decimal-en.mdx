@@ -1,108 +1,129 @@
-export const ColorGenerator = () => {
-  const [hue, setHue] = useState(180)
-  const [saturation, setSaturation] = useState(50)
-  const [lightness, setLightness] = useState(50)
-  const [colors, setColors] = useState([])
+export const HexToDecimalConverter = () => {
+  const [hexInput, setHexInput] = useState('FF')
+  const [decimalOutput, setDecimalOutput] = useState(255)
+  const [isValid, setIsValid] = useState(true)
+  const [examples, setExamples] = useState([])
 
   useEffect(() => {
-    const newColors = []
-    for (let i = 0; i < 5; i++) {
-      const l = Math.max(10, Math.min(90, lightness - 20 + i * 10))
-      newColors.push(`hsl(${hue}, ${saturation}%, ${l}%)`)
+    // Remove # if present and convert to uppercase
+    const cleanHex = hexInput.replace('#', '').toUpperCase()
+    
+    // Validate hex input
+    const hexRegex = /^[0-9A-F]+$/
+    if (cleanHex === '' || !hexRegex.test(cleanHex)) {
+      setIsValid(false)
+      setDecimalOutput(0)
+      return
     }
-    setColors(newColors)
-  }, [hue, saturation, lightness])
 
-  const copyToClipboard = (color) => {
+    setIsValid(true)
+    const decimal = parseInt(cleanHex, 16)
+    setDecimalOutput(decimal)
+
+    // Generate some example conversions
+    const newExamples = [
+      { hex: 'A', decimal: 10 },
+      { hex: 'FF', decimal: 255 },
+      { hex: '100', decimal: 256 },
+      { hex: '1A2B', decimal: 6699 },
+      { hex: 'FFFF', decimal: 65535 }
+    ]
+    setExamples(newExamples)
+  }, [hexInput])
+
+  const copyToClipboard = (value, type) => {
     navigator.clipboard
-      .writeText(color)
+      .writeText(value.toString())
       .then(() => {
-        console.log(`Copied ${color} to clipboard!`)
+        console.log(`Copied ${type}: ${value} to clipboard!`)
       })
       .catch((err) => {
-        console.error("Failed to copy: ", err)
+        console.error('Failed to copy: ', err)
       })
+  }
+
+  const handleHexChange = (e) => {
+    const value = e.target.value
+    // Allow # symbol, letters, and numbers
+    if (/^#?[0-9A-Fa-f]*$/.test(value) || value === '') {
+      setHexInput(value)
+    }
   }
 
   return (
     <div className="p-4 border dark:border-zinc-950/80 rounded-xl not-prose">
       <div className="space-y-4">
-        <div className="space-y-2">
-          <label className="block text-sm text-zinc-950/70 dark:text-white/70">
-            Hue: {hue}°
+        <div className="space-y-3">
+          <div>
+            <label className="block text-sm text-zinc-950/70 dark:text-white/70 mb-2">
+              Hexadecimal Input
+            </label>
             <input
-              type="range"
-              min="0"
-              max="360"
-              value={hue}
-              onChange={(e) => setHue(Number.parseInt(e.target.value))}
-              className="w-full h-2 bg-zinc-950/20 rounded-lg appearance-none cursor-pointer dark:bg-white/20 mt-1"
-              style={{
-                background: `linear-gradient(to right, 
-                  hsl(0, ${saturation}%, ${lightness}%), 
-                  hsl(60, ${saturation}%, ${lightness}%), 
-                  hsl(120, ${saturation}%, ${lightness}%), 
-                  hsl(180, ${saturation}%, ${lightness}%), 
-                  hsl(240, ${saturation}%, ${lightness}%), 
-                  hsl(300, ${saturation}%, ${lightness}%), 
-                  hsl(360, ${saturation}%, ${lightness}%))`,
-              }}
+              type="text"
+              value={hexInput}
+              onChange={handleHexChange}
+              placeholder="Enter hex value (e.g., FF or #FF)"
+              className={`w-full px-3 py-2 border rounded-lg font-mono text-lg ${
+                isValid 
+                  ? 'border-zinc-950/20 dark:border-white/20 bg-white dark:bg-zinc-900' 
+                  : 'border-red-500 bg-red-50 dark:bg-red-950/20'
+              } text-zinc-950 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50`}
             />
-          </label>
+            {!isValid && (
+              <p className="text-red-500 text-sm mt-1">
+                Please enter a valid hexadecimal value (0-9, A-F)
+              </p>
+            )}
+          </div>
 
-          <label className="block text-sm text-zinc-950/70 dark:text-white/70">
-            Saturation: {saturation}%
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={saturation}
-              onChange={(e) => setSaturation(Number.parseInt(e.target.value))}
-              className="w-full h-2 bg-zinc-950/20 rounded-lg appearance-none cursor-pointer dark:bg-white/20 mt-1"
-              style={{
-                background: `linear-gradient(to right, 
-                  hsl(${hue}, 0%, ${lightness}%), 
-                  hsl(${hue}, 50%, ${lightness}%), 
-                  hsl(${hue}, 100%, ${lightness}%))`,
-              }}
-            />
-          </label>
-
-          <label className="block text-sm text-zinc-950/70 dark:text-white/70">
-            Lightness: {lightness}%
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={lightness}
-              onChange={(e) => setLightness(Number.parseInt(e.target.value))}
-              className="w-full h-2 bg-zinc-950/20 rounded-lg appearance-none cursor-pointer dark:bg-white/20 mt-1"
-              style={{
-                background: `linear-gradient(to right, 
-                  hsl(${hue}, ${saturation}%, 0%), 
-                  hsl(${hue}, ${saturation}%, 50%), 
-                  hsl(${hue}, ${saturation}%, 100%))`,
-              }}
-            />
-          </label>
-        </div>
-
-        <div className="flex space-x-1">
-          {colors.map((color, idx) => (
+          <div>
+            <label className="block text-sm text-zinc-950/70 dark:text-white/70 mb-2">
+              Decimal Output
+            </label>
             <div
-              key={idx}
-              className="h-16 rounded flex-1 cursor-pointer transition-transform hover:scale-105"
-              style={{ backgroundColor: color }}
-              title={`Click to copy: ${color}`}
-              onClick={() => copyToClipboard(color)}
-            />
-          ))}
+              className="w-full px-3 py-2 border border-zinc-950/20 dark:border-white/20 rounded-lg bg-zinc-50 dark:bg-zinc-800 font-mono text-lg text-zinc-950 dark:text-white cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-700"
+              onClick={() => copyToClipboard(decimalOutput, 'decimal')}
+              title="Click to copy decimal value"
+            >
+              {decimalOutput.toLocaleString()}
+            </div>
+          </div>
         </div>
 
-        <div className="text-sm font-mono text-zinc-950/70 dark:text-white/70">
-          <p>
-            Base color: hsl({hue}, {saturation}%, {lightness}%)
-          </p>
+        <div className="space-y-2">
+          <h3 className="text-sm font-medium text-zinc-950/70 dark:text-white/70">
+            Common Examples
+          </h3>
+          <div className="grid grid-cols-5 gap-2">
+            {examples.map((example, idx) => (
+              <div
+                key={idx}
+                className="p-2 border border-zinc-950/20 dark:border-white/20 rounded cursor-pointer transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800"
+                onClick={() => setHexInput(example.hex)}
+                title={`Click to use: ${example.hex}`}
+              >
+                <div className="text-xs text-zinc-950/70 dark:text-white/70">
+                  {example.hex}
+                </div>
+                <div className="text-sm font-mono text-zinc-950 dark:text-white">
+                  {example.decimal.toLocaleString()}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-sm font-mono text-zinc-950/70 dark:text-white/70 space-y-1">
+          {isValid && hexInput && (
+            <>
+              <p>
+                Hex: {hexInput.replace('#', '').toUpperCase()} → Decimal: {decimalOutput.toLocaleString()}
+              </p>
+              <p className="text-xs">
+                Binary: {decimalOutput.toString(2)} | Octal: {decimalOutput.toString(8)}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
