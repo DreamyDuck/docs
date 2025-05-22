@@ -1,143 +1,109 @@
 export const HexToDecimalConverter = () => {
-  const [hexInput, setHexInput] = useState('');
-  const [decimalOutput, setDecimalOutput] = useState(null);
-  const [error, setError] = useState(null);
-  const [copiedMessage, setCopiedMessage] = useState(null);
+  const [hexInput, setHexInput] = useState('')
+  const [decimalResult, setDecimalResult] = useState(null)
+  const [error, setError] = useState('')
 
-  useEffect(() => {
-    const trimmedHex = hexInput.trim();
-
-    if (!trimmedHex) {
-      setDecimalOutput(null);
-      setError(null);
-      return;
+  const validateAndConvert = (hex) => {
+    // Remove any '#' prefix and whitespace
+    const cleanHex = hex.replace(/^#/, '').trim()
+    
+    // Check if it's empty
+    if (!cleanHex) {
+      setDecimalResult(null)
+      setError('')
+      return
     }
-
-    const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/i;
-    if (!hexRegex.test(trimmedHex)) {
-      setError('Invalid hex format. Use #RGB or #RRGGBB.');
-      setDecimalOutput(null);
-      return;
+    
+    // Check if it's a valid hex string (only contains 0-9, a-f, A-F)
+    const hexRegex = /^[0-9a-fA-F]+$/
+    
+    if (!hexRegex.test(cleanHex)) {
+      setError('Invalid hex format. Use only 0-9 and A-F characters.')
+      setDecimalResult(null)
+      return
     }
-
-    setError(null); // Clear previous error
-
-    let hexValue = trimmedHex.substring(1); // Remove #
-
-    if (hexValue.length === 3) {
-      hexValue = hexValue
-        .split('')
-        .map((char) => char + char)
-        .join(''); // "RGB" -> "RRGGBB"
+    
+    try {
+      const decimal = parseInt(cleanHex, 16)
+      setDecimalResult(decimal)
+      setError('')
+    } catch (err) {
+      setError('Error converting hex to decimal.')
+      setDecimalResult(null)
     }
-
-    const r = parseInt(hexValue.substring(0, 2), 16);
-    const g = parseInt(hexValue.substring(2, 4), 16);
-    const b = parseInt(hexValue.substring(4, 6), 16);
-
-    if (isNaN(r) || isNaN(g) || isNaN(b)) {
-      setError('Error parsing hex components.'); // Should be caught by regex, but as a fallback
-      setDecimalOutput(null);
-    } else {
-      setDecimalOutput({ r, g, b });
-    }
-  }, [hexInput]);
+  }
 
   const handleHexInputChange = (e) => {
-    setHexInput(e.target.value);
-    if (copiedMessage) setCopiedMessage(null); // Clear copied message on new input
-  };
+    const value = e.target.value
+    setHexInput(value)
+    validateAndConvert(value)
+  }
 
-  const handleCopyToClipboard = (textToCopy) => {
-    if (!navigator.clipboard) {
-      setCopiedMessage('Clipboard API not available.');
-      setTimeout(() => setCopiedMessage(null), 3000);
-      return;
-    }
+  const copyToClipboard = (value) => {
     navigator.clipboard
-      .writeText(textToCopy)
+      .writeText(value.toString())
       .then(() => {
-        setCopiedMessage(`Copied "${textToCopy}"!`);
+        console.log(`Copied ${value} to clipboard!`)
       })
       .catch((err) => {
-        setCopiedMessage('Failed to copy.');
-        console.error('Failed to copy: ', err);
-      });
-    setTimeout(() => setCopiedMessage(null), 3000); // Clear message after 3s
-  };
+        console.error("Failed to copy: ", err)
+      })
+  }
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && decimalResult !== null) {
+      copyToClipboard(decimalResult)
+    }
+  }
 
   return (
     <div className="p-4 border dark:border-zinc-950/80 rounded-xl not-prose">
-      <h2 className="text-xl font-semibold mb-4 text-zinc-900 dark:text-white">
-        Hex to Decimal Converter
-      </h2>
       <div className="space-y-4">
-        <div>
-          <label
-            htmlFor="hexInput"
-            className="block text-sm font-medium text-zinc-950/70 dark:text-white/70 mb-1"
-          >
-            Enter Hex Color Code:
+        <div className="space-y-2">
+          <label className="block text-sm text-zinc-950/70 dark:text-white/70">
+            Hex Value
+            <input
+              type="text"
+              value={hexInput}
+              onChange={handleHexInputChange}
+              placeholder="Enter hex value (e.g., FF, #A1B2C3, 1A2B)"
+              className="w-full p-3 mt-1 border border-zinc-950/20 dark:border-white/20 rounded-lg bg-white dark:bg-zinc-950 text-zinc-950 dark:text-white placeholder:text-zinc-950/50 dark:placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+              aria-label="Hexadecimal input"
+            />
           </label>
-          <input
-            type="text"
-            id="hexInput"
-            value={hexInput}
-            onChange={handleHexInputChange}
-            placeholder="#RRGGBB or #RGB"
-            className="mt-1 block w-full px-3 py-2 bg-white dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 sm:text-sm text-zinc-900 dark:text-white"
-            aria-describedby={error ? "hexError" : undefined}
-          />
         </div>
 
         {error && (
-          <p id="hexError" className="text-sm text-red-600 dark:text-red-400">
+          <div className="text-sm text-red-500" role="alert" aria-live="polite">
             {error}
-          </p>
+          </div>
         )}
 
-        {decimalOutput && !error && (
-          <div className="space-y-3 p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-md">
-            <p className="text-md font-medium text-zinc-900 dark:text-white">
-              Decimal Value:
-              <span className="ml-2 font-mono px-2 py-1 bg-zinc-200 dark:bg-zinc-700 rounded text-sm">
-                R: {decimalOutput.r}, G: {decimalOutput.g}, B: {decimalOutput.b}
-              </span>
-            </p>
-            <div className="flex items-center space-x-3">
-              <div
-                className="w-10 h-10 rounded border border-zinc-300 dark:border-zinc-700"
-                style={{
-                  backgroundColor: hexInput.trim(),
-                  transition: 'background-color 0.3s ease',
-                }}
-                title={`Color preview for ${hexInput.trim()}`}
-                aria-label={`Color preview for ${hexInput.trim()}`}
-              ></div>
-              <button
-                type="button"
-                onClick={() =>
-                  handleCopyToClipboard(
-                    `rgb(${decimalOutput.r}, ${decimalOutput.g}, ${decimalOutput.b})`
-                  )
-                }
-                className="px-4 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-50 dark:focus:ring-offset-zinc-900 focus:ring-green-500 dark:bg-green-500 dark:hover:bg-green-600 transition-colors"
-              >
-                Copy RGB
-              </button>
+        {decimalResult !== null && (
+          <div 
+            className="p-4 bg-zinc-950/5 dark:bg-white/5 rounded-lg cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            title={`Click to copy: ${decimalResult}`}
+            onClick={() => copyToClipboard(decimalResult)}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="button"
+            aria-label={`Decimal result: ${decimalResult}. Click or press Enter to copy.`}
+          >
+            <div className="text-sm text-zinc-950/70 dark:text-white/70 mb-1">
+              Decimal Result:
+            </div>
+            <div className="text-3xl font-mono font-bold text-zinc-950 dark:text-white">
+              {decimalResult.toLocaleString()}
             </div>
           </div>
         )}
-        {copiedMessage && (
-          <p
-            className="text-sm text-green-700 dark:text-green-500 mt-2"
-            role="status"
-            aria-live="polite"
-          >
-            {copiedMessage}
+
+        <div className="text-sm font-mono text-zinc-950/70 dark:text-white/70">
+          <p>
+            Enter a hexadecimal value to convert it to decimal. Click the result to copy to clipboard.
           </p>
-        )}
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
