@@ -33,9 +33,18 @@ Please complete [Initial Setup](/en/firmware-guide/ditto-fw/initial-setup) befor
 ---
 
 ## How to custom your xHCI
-
----
-
+1. Goto [**Linux Hardware List**](https://linux-hardware.org/?class=pci:*-0c-03-30).
+2. There is more than 10,000 devices, you can pick and click into any device you like.
+<Warning>We recommend avoiding Intel/AMD/NVIDIA xHCI devices!</Warning>
+<Frame><img src="/en/images/ditto-how-to-use0.png" /></Frame>
+3. On `Ditto Software`, goto `Editor` -> `Capabilities`.
+<Frame><img src="/en/images/ditto-how-to-use1.png" /></Frame>
+4. Based on your selected device, fill in the information. If you are unsure how to identify the Vendor ID and Device ID, you can use the tools below. Simply copy and paste the `XXXX:XXXX:XXXX:XXXX` into them.  
+-  Vendor ID  
+-  Device ID  
+-  Protocol  
+<iframe width="800" height="540" src="https://v0-ditto-id-extractor.vercel.app/"> </iframe>
+5. Click `Apply Changes`.
 ---
 
 ## Activate Firmware
@@ -46,14 +55,21 @@ Please complete [Initial Setup](/en/firmware-guide/ditto-fw/initial-setup) befor
 </Warning>
 1. After setting up your desired device in detail, sub-device information, etc. in Ditto, go to the `Settings` page.
 2. Powering on your **Main PC**. (immediately proceed to the next step)
-3. After the Main PC is powered on, wait for about 5 seconds, and then click `Connect` on the Second PC. (Start counting from power on, not after entering the windows).
-4. If activation is successful, it will load Windows normally. If it fails, the screen will remain black and you will not be able to access the Windows system.
-<Note>
-If you don't want to use Ditto Subscription after it expires, you can use this method:  
-- Switch to the JTAG interface, after the Main PC is powered on and energized, Second PC burn the DMA firmware in the normal way. after completion, the Main PC completes a power-off reboot, and then it can start normally.
-</Note>
+3. After the Main PC is powered on, wait for about 5 seconds, and then click `Connect` in `Ditto Software` -> `Settings` on the Second PC. (Start counting from power on, not after entering the windows).
+4. After a few `Retrying to connect` notification, a notification will pop up indicating that `FGPA Connected` if everything is correct.
 
+### Determine whether the firmware has connected successfully and initialized correctly
 
+<Info>
+  <u><strong>Determine if it's connected properly</strong></u>:  
+  -  Windows will boot quickly, as usual.  
+  -  A device you emulated will appear in your **Main PC** `Device Manager`.  
+
+  <u><strong>Determine if it failed to connect</strong></u>:  
+  -  Windows may get stuck on a black screen and fail to boot.  
+  -  Windows may boot slowly, taking up to 5 minutes to load.  
+  -  In Device Manager, a device labeled `USB xHCI Compliant Host Controller` will show a ⚠️ yellow exclamation mark.
+</Info>
 
 ### Better Activation Timing?
 
@@ -71,7 +87,3 @@ If you don't want to use Ditto Subscription after it expires, you can use this m
 1. If you're using a Ferrum, just wait until your mouse shows up under the `Boards` category, then hit `Connect` in Ditto.
 
 This timing trick should completely eliminate your connection headaches.
-
-import { HexToDecimalConverter } from "/snippets/hex-to-decimal-en.mdx"
-
-<HexToDecimalConverter />
